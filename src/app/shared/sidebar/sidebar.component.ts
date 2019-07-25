@@ -18,7 +18,7 @@ export const ROUTES: RouteInfo[] = [
     { path: 'principal', idSubMenu: '', title: 'Principal', icon: 'ti-home', class: '', submenu: [] },
     { path: 'comoparticipar', idSubMenu: '', title: 'Como Participar', icon: 'ti-thumb-up', class: '', submenu: [] },
     { path: 'avisolicitacao', idSubMenu: '', title: 'Aviso de Licitações', icon: 'ti-bell', class: '', submenu: [] },
-    { path: 'expirados', idSubMenu: '', title: 'Expirados', icon: 'ti-na', class: '', submenu: [] }    
+    { path: 'expirados', idSubMenu: '', title: 'Expirados', icon: 'ti-na', class: '', submenu: [] }
 ];
 
 export const ROUTESLogado: RouteInfo[] = [
@@ -65,7 +65,7 @@ export const ROUTESLogado: RouteInfo[] = [
                     idSubMenu: 'fornece', path: 'null', title: 'Fornecedores', icon: '', class: 'sidebar-normal', submenu:
                         [
                             { idSubMenu: '', path: 'configuracoes/fornecedor/gerais', title: 'Gerais', icon: '', class: 'paddingleft20', submenu: [] },
-                            { idSubMenu: '', path: 'configuracoes/fornecedor/modeloparaemail', title: 'Modelo para Email', icon: '', class: 'paddingleft20', submenu: [] }                            
+                            { idSubMenu: '', path: 'configuracoes/fornecedor/modeloparaemail', title: 'Modelo para Email', icon: '', class: 'paddingleft20', submenu: [] }
                         ]
                 },
             ]
@@ -78,6 +78,7 @@ export const ROUTESLogado: RouteInfo[] = [
     moduleId: module.id,
     selector: 'sidebar-cmp',
     templateUrl: 'sidebar.component.html',
+    styleUrls: ['./sidebar.component.css'],
 })
 
 export class SidebarComponent implements OnInit {
@@ -93,18 +94,18 @@ export class SidebarComponent implements OnInit {
     ngOnInit() {
         this.authService.currentUserAD.subscribe(user => {
             if (user != null){
-                this.menuItems = ROUTESLogado.filter(menuItem => menuItem);                
+                this.menuItems = ROUTESLogado.filter(menuItem => menuItem);
             }
             else {
-                this.menuItems = ROUTES.filter(menuItem => menuItem);                
+                this.menuItems = ROUTES.filter(menuItem => menuItem);
             }
         });
 
         this.authService.currentFornecedor.subscribe(user => {
-            if (user != null){                
+            if (user != null){
                 this.logado = true;
             }
-            else {                
+            else {
                 this.logado = false;
             }
         });
@@ -125,7 +126,7 @@ export class SidebarComponent implements OnInit {
             $("#" + id).addClass('in');
         }
     }
-    
+
     abrirInscrevase() {
         this.modalService.open('cadastroFornecedor')
     }

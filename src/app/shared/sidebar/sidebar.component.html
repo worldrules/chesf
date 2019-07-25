@@ -3,11 +3,11 @@
         <div>
             <img src="./assets/img/chesf-logo.png" alt="" width="150">
         </div>
-        <div style="float: right; color:#8B4513;">e-Edital</div>
+        <div id="saust">SAUST</div>
     </div>
     <ul class="nav">
         <li class="divider" *ngIf="isNotMobileMenu()"></li>
-        <li *ngFor="let menuItem of menuItems" routerLinkActive="active" class="{{menuItem.class}}">            
+        <li *ngFor="let menuItem of menuItems" routerLinkActive="active" class="{{menuItem.class}}">
             <a *ngIf="menuItem.path != 'null'" [routerLink]="[menuItem.path]" style="cursor:pointer;">
                 <p class="sidebar-mini"><i class="{{menuItem.icon}}"></i></p>
                 <p>{{menuItem.title}}</p>
@@ -18,7 +18,7 @@
             </a>
             <div *ngIf="menuItem.submenu.length > 0" class="collapse" id="{{menuItem.idSubMenu}}" aria-expanded="false">
                 <ul class="nav" style="margin: 0;padding-left: 20px;">
-                    <li *ngFor="let subMenuItem of menuItem.submenu" routerLinkActive="active" 
+                    <li *ngFor="let subMenuItem of menuItem.submenu" routerLinkActive="active"
                         class="{{subMenuItem.class}}">
                         <a *ngIf="subMenuItem.path != 'null'" [routerLink]="subMenuItem.path" style="cursor:pointer; margin-bottom: 5px;margin-top: 0;padding-bottom: 0;padding-top: 0;">
                             <span class="sidebar-mini"><i class="{{subMenuItem.icon}}"></i></span>
