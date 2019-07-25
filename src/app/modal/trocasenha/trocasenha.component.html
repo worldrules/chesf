@@ -1,0 +1,77 @@
+<div class="modal" id="modalTrocaSenha" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title"><i class="ti-lock"></i> Esqueci a minha senha</h4>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body" (keyup.enter)="trocaSenha()">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label for="usuario" id="labelUsuario" style="color:#9a9a9a">Usuário</label>
+              <input type="text" class="form-control border-input" id="usuario" [(ngModel)]="usuario" required>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label for="senhaAntiga" id="labelSenhaAntiga" style="color:#9a9a9a">Senha antiga</label>
+              <input type="password" class="form-control border-input" id="senhaAntiga" [(ngModel)]="senhaAntiga" required>
+            </div>
+          </div>1
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label for="senhaNova" id="labelSenhaNova" style="color:#9a9a9a">Nova senha</label>
+              <input type="password" class="form-control border-input" id="senhaNova" [(ngModel)]="senhaNova" required>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label for="confirmaNovaSenha" id="labelConfirmaNovaSenha" style="color:#9a9a9a">Confirmar a nova
+                senha</label>
+              <input type="password" class="form-control border-input" id="confirmaNovaSenha"
+                [(ngModel)]="confirmaNovaSenha" required>
+            </div>
+          </div>
+        </div>
+        <div class="row" style="height: 10px; padding: 10px;">
+
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center" id="botoes" *ngIf="!loading">
+            <div class="col-md-6 text-center">
+              <button class="btn btn-success btn-fill btn-wd" (click)="trocaSenha()">
+                <i class="nc-icon nc-zoom-split">
+                  Trocar senha
+                </i>
+              </button>
+            </div>
+            <div class="col-md-6 text-center">
+              <button class="btn btn-error btn-fill btn-wd" data-dismiss="modal">
+                <i class="nc-icon nc-zoom-split"></i>
+                Fechar
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="row" *ngIf="loading == true">
+          <div class="col-md-12 text-center">
+            <div style="text-align: center;">
+              <img src="../../../assets/img/loading.gif" height="50px">
+              <p> Alterando senha... </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,52 @@
+<div class="modal" id="loginFornecedor" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title"><i class="ti-lock"></i> Credenciado</h4>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="usuarioFornecedor" style="color:#9a9a9a">Usuário</label>
+                <input type="text" class="form-control border-input" id="usuarioFornecedor" name="usuarioFornecedor"
+                  placeholder="Usuario" [(ngModel)]="fornecedor.usuario" required>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="senhaFornecedor" style="color:#9a9a9a">Senha</label>
+                <input type="password" class="form-control border-input" id="senhaFornecedor" name="senhaFornecedor"
+                  placeholder="Senha" [(ngModel)]="fornecedor.senha" required>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row" style="height: 10px; padding: 10px;">
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <div class="col-md-6 text-center">
+              <button class="btn btn-success btn-fill btn-wd" (click)="logarFornecedor()">
+                <i class="nc-icon nc-zoom-split" *ngIf="!loading">
+                  Login
+                </i>
+              </button>
+            </div>
+            <div class="col-md-6 text-center">
+              <button class="btn btn-error btn-fill btn-wd" data-dismiss="modal" *ngIf="!loading">
+                <i class="nc-icon nc-zoom-split"></i>
+                Fechar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

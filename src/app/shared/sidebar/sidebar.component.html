@@ -1,0 +1,59 @@
+<div class="sidebar-wrapper">
+    <div class="logo">
+        <div>
+            <img src="./assets/img/chesf-logo.png" alt="" width="150">
+        </div>
+        <div style="float: right; color:#8B4513;">e-Edital</div>
+    </div>
+    <ul class="nav">
+        <li class="divider" *ngIf="isNotMobileMenu()"></li>
+        <li *ngFor="let menuItem of menuItems" routerLinkActive="active" class="{{menuItem.class}}">            
+            <a *ngIf="menuItem.path != 'null'" [routerLink]="[menuItem.path]" style="cursor:pointer;">
+                <p class="sidebar-mini"><i class="{{menuItem.icon}}"></i></p>
+                <p>{{menuItem.title}}</p>
+            </a>
+            <a *ngIf="menuItem.path == 'null'" (click)="expandItem(menuItem.idSubMenu)" style="cursor:pointer;">
+                <p class="sidebar-mini"><i class="{{menuItem.icon}}"></i></p>
+                <p>{{menuItem.title}}</p>
+            </a>
+            <div *ngIf="menuItem.submenu.length > 0" class="collapse" id="{{menuItem.idSubMenu}}" aria-expanded="false">
+                <ul class="nav" style="margin: 0;padding-left: 20px;">
+                    <li *ngFor="let subMenuItem of menuItem.submenu" routerLinkActive="active" 
+                        class="{{subMenuItem.class}}">
+                        <a *ngIf="subMenuItem.path != 'null'" [routerLink]="subMenuItem.path" style="cursor:pointer; margin-bottom: 5px;margin-top: 0;padding-bottom: 0;padding-top: 0;">
+                            <span class="sidebar-mini"><i class="{{subMenuItem.icon}}"></i></span>
+                            <span>{{subMenuItem.title}}</span>
+                        </a>
+                        <a *ngIf="subMenuItem.path == 'null'" (click)="expandItem(subMenuItem.idSubMenu)" style="cursor:pointer; margin-bottom: 5px;margin-top: 0;padding-bottom: 0;padding-top: 0;">
+                            <span class="sidebar-mini"><i class="{{subMenuItem.icon}}"></i></span>
+                            <span>{{subMenuItem.title}}</span>
+                        </a>
+                        <div *ngIf="subMenuItem.submenu.length > 0" class="collapse" id="{{subMenuItem.idSubMenu}}"
+                            aria-expanded="false" style="position: initial; margin-bottom: 20px;">
+                            <ul class="nav" style="margin: 0;padding-left: 20px;">
+                                <li *ngFor="let subMenuItem of subMenuItem.submenu" routerLinkActive="active"
+                                    class="{{subMenuItem.class}}">
+                                    <a [routerLink]="[subMenuItem.path]" style="cursor:pointer; margin-bottom: 5px; margin-top: 0; height: 20px;">
+                                        <span class="sidebar-mini"><i class="{{subMenuItem.icon}}"></i></span>
+                                        <span>{{subMenuItem.title}}</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="active-pro" >
+            <a style="cursor:pointer;" *ngIf="!logado" (click)="abrirInscrevase()">
+                <i class="ti-plus"></i>
+                <p>Inscrever-se</p>
+            </a>
+            <a style="cursor:pointer;">
+                <i class="ti-help-alt"></i>
+                <p>Ajuda</p>
+            </a>
+        </li>
+    </ul>
+</div>
+

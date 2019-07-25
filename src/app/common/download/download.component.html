@@ -1,0 +1,32 @@
+<div class="content table-responsive" *ngIf="!carregando">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          
+          <th style="text-align: center;">Extensão</th>
+          <th style="text-align: left;">Nome</th>
+          <th style="text-align: center;">Download</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- <tr *ngFor="let arquivo of arquivos">
+            <td style="text-align: center;"><a tooltip="Ver detalhes da Licitação" (click)="abreDetalhes(licitacao.id)"
+              style="cursor: pointer;">{{ licitacao.codigo }}</a></td>
+          <td>{{ licitacao.descricao }}</td>
+          <td style="text-align: center;">{{ licitacao.dataValidade | date : 'dd/MM/yyyy' }}</td>
+        </tr> -->
+        <tr>            
+          <td style="text-align: center;">.zip</td>
+          <td style="text-align: left;">Arquivos da licitação</td>
+          <td style="text-align: center;"><a href="/download/idArquivo" target="_blank"
+            style="cursor: pointer;"><i class="ti-download"></i></a></td>
+        </tr>
+        <tr>            
+            <td style="text-align: center;">.pdf</td>
+            <td style="text-align: left;">Edital</td>
+            <td style="text-align: center;"><a href="/download/idArquivo" target="_blank"
+              style="cursor: pointer;"><i class="ti-download"></i></a></td>
+          </tr>
+      </tbody>
+    </table>
+  </div>

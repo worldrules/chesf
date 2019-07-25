@@ -1,0 +1,66 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-12 col-md-12">
+      <div class="">
+        <div class="header">
+          <h4 class="title">Mais Filtros</h4>
+        </div>
+        <div class="content">
+          <form>
+            <div class="row">              
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Aquisição até</label>
+                  <!-- <input type="datetime" class="form-control datepicker" placeholder="Aquisição até..."> -->
+                  <div class="form-group">
+                    <input class="form-control border-input calendar" placeholder="Aquisição até" name="dp" [(ngModel)]="model"
+                      ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()">
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label>Modalidade</label>
+                  <select name="modalidade" class="form-control border-input" id="modalidade">
+                    <option value="" selected> -- Selecione -- </option>
+                    <option value="TP">Tomada de Preços</option>
+                    <option value="PG">Pregão</option>
+                    <option value="LL">Leilão</option>
+                    <option value="LIC">LICITAÇÃO</option>
+                    <option value="CSI">CONTRATAÇÃO SEMI-INTEGRADA</option>
+                    <option value="CTI">CONTRATAÇÃO INTEGRADA</option>
+                    <option value="ABV">Aquisição de Baixo Valor</option>
+                    <option value="ADT">Aditivo</option>
+                    <option value="CAR">Carona</option>
+                    <option value="CD">Dispensa / Inexigibilidade</option>
+                    <option value="CDV">Convênio</option>
+                    <option value="CRD">Credenciamento</option>
+                    <option value="CV">Convite</option>
+                    <option value="PAR">Participante de Registro de Preço</option>
+                    <option value="PGR">Pregão para Registro de Preços</option>
+                    <option value="PV">Pequeno Vulto</option>
+                    <option value="RP">Registro de Preços</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label>Critério de Julgamento</label>
+                  <select name="criterioJulgamento" class="form-control border-input" id="criterioJulgamento">
+                    <option value="" selected>-- Selecione --</option>
+                    <option value="T">Técnica e Preço</option>
+                    <option value="M">Menor Preço</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="text-center">
+              <button type="submit" class="btn btn-info btn-fill btn-wd">Pesquisar</button>
+            </div>
+            <div class="clearfix"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

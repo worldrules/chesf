@@ -1,0 +1,66 @@
+<div class="card">
+    <div class="header">
+        <h4 class="title">Em configuração</h4>
+        <p class="category"></p>
+    </div>
+    <div class="card-content">
+        <div class="col-md-12" style="margin-top: 10px; z-index: 1;">
+            <div class="col-md-10" style="display: inline-flex;">
+                <div class="form-group">
+                    <div style="display: inline-flex; margin-top: 10px;">
+                        <input type="text" style="margin-top:5px; margin-right: 5px;" autocomplete="off"
+                            class="form-control border-input" placeholder="Pesquisar..." [(ngModel)]="termoPesquisa"
+                            width="300px">
+                        <button class="btn btn-sm btn-success btn-icon" style="margin-top:5px;" (click)="pesquisar()"><i
+                                class="fa fa-search"></i> Pesquisar</button>
+                        <swal #emptyPesquisa title="Pesquisa"
+                            text="Você precisa digitar alguma coisa no campo pesquisa para pesquisar." type="info"
+                            [showCancelButton]="false">
+                        </swal>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div style="float: right; display: inline-flex;">
+                    <p style="cursor: pointer;" (click)="expandir()">Mais <i id="expandir" class="ti-angle-down"></i>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 slide" style="margin-top: 10px;" *ngIf="mais" id="maisFiltros">
+            <app-filtro-aviso></app-filtro-aviso>
+        </div>
+        <div class="content table-responsive" *ngIf="!carregando">
+            <ngx-datatable #emConfiguracaoTable class="material" style="display: contents;" [rows]="rows"
+                [columns]="columns" [headerHeight]="50" [footerHeight]="50" [rowHeight]="'auto'" [externalPaging]="true"
+                [count]="page.totalElements" [offset]="page.pageNumber" [limit]="page.size"
+                [loadingIndicator]="carregando" (page)='setPage($event)'>
+
+                <ngx-datatable-column name="Importado em" prop="dataImportada" width="100">
+                    <ng-template let-value="value" ngx-datatable-cell-template>
+                        {{value | date: 'MM/dd/yyyy'}}
+                    </ng-template>
+                </ngx-datatable-column>
+                <ngx-datatable-column name="Licitação" prop="licitacao" width="200"></ngx-datatable-column>
+                <ngx-datatable-column name="Aquisição até" prop="prazoAquisicao" width="100">
+                    <ng-template let-value="value" ngx-datatable-cell-template>
+                        {{value | date: 'MM/dd/yyyy'}}
+                    </ng-template>
+                </ngx-datatable-column>
+                <ngx-datatable-column name="Objeto" prop="objeto" width="540"></ngx-datatable-column>
+
+                <ngx-datatable-column name="Ação" prop="nroEdital" width="50">
+                    <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+                        <button type="button" class="btn btn-sm btn-success btn-icon" (click)="abreDetalhes(value)"
+                            style="padding: 5px 9px 5px 9px"><i class="ti-pencil-alt"></i></button>
+                    </ng-template>
+                </ngx-datatable-column>
+            </ngx-datatable>
+        </div>
+        <div class="loading" *ngIf="carregando">
+            <img src="../../assets/img/loading.gif" height="50">
+            <h4>Carregando...</h4>
+        </div>
+    </div>
+</div>
+<app-detalhesconfiguracao></app-detalhesconfiguracao>

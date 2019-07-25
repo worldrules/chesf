@@ -1,0 +1,238 @@
+<div class="modal" id="modalDetalhesPublicado" role="dialog">
+    <div class="modal-dialog" style="width: 80%">
+        <div class="modal-content">
+            <input type="hidden" id="idDetalhesPublicado">
+            <!-- Modal Header -->
+            <div class="modal-header" style="text-align: center;">
+                <h4 class="modal-title" style="color: #CD8755;">
+                    <i class="ti-info-alt" style="color: #CD8755;text-align: left;"></i> Detalhes da Licitação - {{ publicado.licitacao }}
+                </h4>
+            </div>
+            <!-- Modal body -->
+            <div class="modal-body" *ngIf="!carregando">
+                <div class="row">
+                    <div class="col-md-12">
+
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-4" style="color: #CD8755;">
+                            <b>Número da Licitação:</b>
+                        </div>
+                        <div class="col-md-8">
+                            {{ publicado.licitacao }}
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-4" style="color: #CD8755;">
+                            <b>Objeto:</b>
+                        </div>
+                        <div class="col-md-8">
+                            {{ publicado.objeto }}
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-4" style="color: #CD8755;">
+                            <b>Critério de Julgamento:</b>
+                        </div>
+                        <div class="col-md-8">
+                            {{ publicado.julgamento }}
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-4" style="color: #CD8755;">
+                            <b>Modalidade:</b>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <select class="form-control" id="modalidade" disabled>
+                          <option>{{ publicado.modalidade }}</option>
+                        </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <hr />
+                </div>
+                <div class="col-md-12" style="color: #CD8755;">
+                    <p><b>Aquisição do Edital na CAF</b> </p>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="col-md-4" style="color: #CD8755;">
+                            <b>Prazo de Aquisição:</b>
+                        </div>
+                        <div class="col-md-8">
+                            {{ publicado.prazoAquisicao | date: 'dd/MM/yyyy' }}
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-4" style="color: #CD8755;">
+                            <b>Horário: </b>
+                        </div>
+                        <div class="col-md-8">
+                            <span style="color: #CD8755;">das </span> 8:30 <span style="color: #CD8755;"> às </span> 12:00 <span style="color: #CD8755;"> e das das </span> 12:00 <span style="color: #CD8755;">às</span> 17:00
+                        </div>
+                        <br>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-4" style="color: #CD8755;">
+                            <b>Valor do edital em Compact Disk-CD (R$):</b>
+                        </div>
+                        <div class="col-md-8">
+                            {{ publicado.vlrEditalCD | number : '1.2-2'}}
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="col-md-4" style="color: #CD8755;">
+                            <b>Valor do edital em Papel (R$):</b>
+                        </div>
+                        <div class="col-md-8">
+                            {{ publicado.vlrEditalCDPapel | number : '1.2-2'}}
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="col-md-4" style="color: #CD8755;">
+                            <b>Valor do edital em Compact Disk-CD <br />com anexo(s) em Papel (R$):</b>
+                        </div>
+                        <div class="col-md-8" style="margin-top:10px">
+                            {{ publicado.vlrAnexo | number : '1.2-2'}}
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="col-md-4" style="color: #CD8755;">
+                            <b>Valor de anexo(s) impossibilitado(s) de ser(em) <br> comercializado(s) pela web (R$):</b>
+                        </div>
+                        <div class="col-md-8 text-left" style="margin-top:10px">
+                            {{ publicado.vlrWeb | number : '1.2-2'}}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <hr />
+                </div>
+                <div class="col-md-12" style="color: #CD8755;">
+                    <p><b>Local</b></p>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="col-md-4" style="color: #CD8755;">
+                            <b>Endereço:</b>
+                        </div>
+                        <div class="col-md-8">
+                            {{ publicado.endereco }}
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-4" style="color: #CD8755;">
+                            <b>Telefones:</b>
+                        </div>
+                        <div class="col-md-8">
+                            {{ publicado.fone }}
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-4" style="color: #CD8755;">
+                            <b>Fax:</b>
+                        </div>
+                        <div class="col-md-8">
+                            {{ publicado.fax }}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <hr />
+                    <div class="col-md-12">
+                        <div class="col-md-4" style="color: #CD8755;">
+                            <p style="cursor: pointer;" (click)="expandirArquivos()"><b>Arquivos da Licitação </b><i id="expandirArquivos" class="ti-angle-down"></i></p>
+                        </div>
+                        <div class="row" *ngIf="arquivo">
+                            <div class="col-md-12">
+                                <app-arquivo></app-arquivo>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <hr />
+                    <div class="col-md-12">
+                        <div class="col-md-6">
+                            <p><b style="color: #CD8755;">Recebimento das Propostas:</b> 9:00h</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p><b style="color: #CD8755;">Do Dia: </b>27/05/2019</p>
+                        </div>
+                        <div class="col-md-5">
+                            <p><b style="color: #CD8755;">Abertura de Documentação de Habilitação as: </b>9:00h</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <hr />
+                    <div class="col-md-12 slide" style="margin-top: 10px;">
+                        <div class="col-md-4" style="color: #CD8755;">
+                            <b>Reponsável:</b>
+                        </div>
+                        <div class="col-md-8">
+                            {{publicado.responsavel}}
+                        </div>
+                    </div>
+                    <div class="col-md-12 slide" style="margin-top: 10px;">
+                        <div class="col-md-4" style="color: #CD8755;">
+                            <b>Cargo:</b>
+                        </div>
+                        <div class="col-md-8">
+                            {{publicado.cargo}}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <hr />
+                    <div class="col-md-12" style="color: #CD8755;">
+                        <div class="col-md-4">
+                            <p style="cursor: pointer;" (click)="mostrar()"><b>Publicação </b><i id="mostrar" class="ti-angle-down"></i></p>
+                        </div>
+                    </div>
+                    <div class="row" *ngIf="publicacao">
+                        <div class="col-md-12">
+                            <div class="row" *ngIf="publicacao">
+                                <div class="col-md-12">
+                                    <div class="col-md-12 slide" style="margin-top: 10px;">
+                                        <div class="col-md-2" style="color: #CD8755;">
+                                            <b>Publicado:</b>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <input [(ngModel)]="publicado.dataPublicacao" class="form-control border-input" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2" style="color: #CD8755;">
+                                            <b>Vencimento:</b>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <span>{{ publicado.dataVencimento }}</span><span style="color: #CD8755;"> às
+                              </span><span>17:00h</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <button class="btn btn-error btn-fill btn-wd" data-dismiss="modal">
+                        <i class="ti-close" style="margin-right: 5px;"></i>
+                        Fechar
+                      </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

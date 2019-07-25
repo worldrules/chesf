@@ -1,0 +1,201 @@
+<div class="modal" id="modalDetalhes" role="dialog">
+  <div class="modal-dialog" style="width: 80%">
+    <div class="modal-content">
+      <input type="hidden" id="idDetalhe">
+      <!-- Modal Header -->
+      <div class="modal-header" style="text-align: center;">
+        <h4 class="modal-title" style="color: #CD8755;">
+          <i class="ti-info-alt"  style="color: #CD8755;text-align: left;"></i> 
+          Detalhes da Licitação - {{ licitacaoDetalhe.edital }} 
+        </h4>
+      </div>
+      <!-- Modal body -->
+      <div class="modal-body" *ngIf="!carregando">
+        <div class="row">
+          <div class="col-md-12">
+
+          </div>
+          <div class="col-md-12">
+            <div class="col-md-4" style="color: #CD8755;">
+              <b>Número da Licitação:</b>
+            </div>
+            <div class="col-md-8">
+              {{ licitacaoDetalhe.edital }}
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="col-md-4" style="color: #CD8755;">
+              <b>Objeto:</b>
+            </div>
+            <div class="col-md-8">
+              {{ licitacaoDetalhe.objeto }}
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="col-md-4" style="color: #CD8755;">
+              <b>Critério de Julgamento:</b>
+            </div>
+            <div class="col-md-8">
+              {{ licitacaoDetalhe.julgamento }}
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="col-md-4" style="color: #CD8755;">
+              <b>Modalidade:</b>
+            </div>
+            <div class="col-md-8">
+              {{ licitacaoDetalhe.modalidade }}
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <hr />
+        </div>
+        <div class="col-md-12" style="color: #CD8755;">
+          <p><b>Aquisição do Edital na CAF</b> </p>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="col-md-4" style="color: #CD8755;">
+              <b>Prazo de Aquisição:</b>
+            </div>
+            <div class="col-md-8">
+              {{ licitacaoDetalhe.dataAquisicao | date: 'dd/MM/yyyy' }}
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="col-md-4" style="color: #CD8755;">
+              <b>Horário: </b>
+            </div>
+            <div class="col-md-8">
+              <span style="color: #CD8755;">das </span> 8:30 <span style="color: #CD8755;"> às </span> 12:00 <span style="color: #CD8755;"> e das das </span>
+              12:00 <span style="color: #CD8755;">às</span> 17:00
+            </div>
+            <br>
+            <div class="row" *ngIf="licitacaoDetalhe.vlCD > 0">
+              <div class="col-md-12" style="color: #CD8755;">
+                <b>Valor do edital em Compact Disk-CD (R$):</b> {{ licitacaoDetalhe.vlCD }}
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <ul>
+              <li *ngFor="let item of licitacaoDetalhe.itens">
+                <div class="col-md-12">
+                  <div class="col-md-8">
+                    {{ item.descricao }}
+                  </div>
+                  <div class="col-md-4">
+                    {{ item.valor }}
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <hr />
+        </div>
+        <div class="col-md-12" style="color: #CD8755;">
+          <p><b>Local</b></p>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="col-md-12">
+              <p>CHESF</p>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="col-md-4" style="color: #CD8755;">
+              <b>Endereço:</b>
+            </div>
+            <div class="col-md-8">
+              {{ licitacaoDetalhe.endereco }}
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="col-md-4" style="color: #CD8755;">
+              <b>Telefones:</b>
+            </div>
+            <div class="col-md-8">
+              {{ licitacaoDetalhe.fone }}
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="col-md-4" style="color: #CD8755;">
+              <b>Fax:</b>
+            </div>
+            <div class="col-md-8">
+              {{ licitacaoDetalhe.fax }}
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <hr />
+        </div>
+        <div class="col-md-12">
+          <p> </p>
+        </div>
+        <div class="row" *ngIf="!logado">
+          <div class="col-md-12">
+            <div class="col-md-4">
+              <p (click)="showLogin()" style="cursor: pointer;">Obtenção do Edital no Site</p>
+            </div>
+            <div class="col-md-8">
+              <p style="color: red;" *ngIf="!login">Obter o Edital, seus Anexos, Esclarecimentos e Alterações. </p>
+              <div *ngIf="login">
+                <div class="col-md-12" style="color: #CD8755; text-align: justify;">
+                  Prazo de aquisição: {{licitacaoDetalhe.prazo | date: 'dd/MM/yyyy'}} às
+                  {{licitacaoDetalhe.prazo | date: 'HH:mm'}}
+
+                  Para oficializar a retirada do edital e para que seja possível a Chesf contactá-lo, é necessário
+                  o seu registro. Usuários já inscritos ou cadastrados na CHESF (credenciados), poderão utilizar login e
+                  senha já disponibilizados. Usuários sem inscrição ou cadastro (não credenciados), deverão informar
+                  seus dados básicos.
+                </div>
+                <div class="col-md-12" style="margin-top: 10px;">
+                  <div class="col-md-6">
+                    <a class="btn btn-success btn-fill btn-wd" (click)="loginFornecedor()">
+                      Credenciado
+                    </a>
+                  </div>
+                  <div class="col-md-6">
+                    <a class="btn btn-success btn-fill btn-wd" (click)="cadastroFornecedor()">
+                      Não Credenciado
+                    </a>
+                  </div>
+                </div>
+                <div class="col-md-12" style="margin-top: 10px; color: #CD8755;">
+                  Clique <a (click)="semAutenticacao()" style="cursor: pointer;">aqui</a> para continuar sem se
+                  identificar.
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="row" *ngIf="logado">
+          <div class="col-md-12">
+            <p>Downloads</p>
+          </div>
+          <div class="col-md-12">
+            <app-download></app-download>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <button class="btn btn-error btn-fill btn-wd" data-dismiss="modal">
+              <i class="ti-close" style="margin-right: 5px;"></i>
+              Fechar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-loginfornecedor></app-loginfornecedor>
+<app-cadastrofornecedor></app-cadastrofornecedor>

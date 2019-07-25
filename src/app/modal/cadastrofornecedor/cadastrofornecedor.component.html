@@ -1,0 +1,84 @@
+<div class="modal" id="cadastroFornecedor" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title"><i class="ti-plusS
+          "></i> Inscreva-se</h4>
+      </div>
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-12">
+            <label for="inputUsuario" style="color:#9a9a9a">Tipo:</label>
+            <div class="radio">
+              <div class="col-md-6">
+                <input type="radio" name="tipo" id="tipoJuridico" [(ngModel)]="tipoPessoa" value="Jurídico" (change)="mudaTipoPessoa()" checked>
+                <label for="tipoJuridico">
+                  Jurídico
+                </label>
+              </div>
+              <div class="col-md-6">
+                <input type="radio" name="tipo" id="tipoFisica" [(ngModel)]="tipoPessoa" value="Fisica" (change)="mudaTipoPessoa()">
+                <label for="tipoFisica">
+                  Física
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12" style="margin-top:10px;">
+          <div class="form-group">
+            <label *ngIf="tipoPessoa == 'Jurídico'">Razão Social: </label>
+            <label *ngIf="tipoPessoa == 'Fisica'">Nome: </label>
+            <input type="text" class="form-control border-input" [(ngModel)]="fornecedor.nome" placeholder="" required>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group">
+            <label *ngIf="tipoPessoa == 'Jurídico'">CNPJ: </label>
+            <label *ngIf="tipoPessoa == 'Fisica'">CPF: </label>
+            <input *ngIf="tipoPessoa == 'Jurídico'" type="text" placeholder="CNPJ" [(ngModel)]="fornecedor.documento"
+              class="form-control border-input" mask="00.000.000/0000-00" placeholder="" required>
+            <input *ngIf="tipoPessoa == 'Fisica'" type="text" placeholder="CPF" [(ngModel)]="fornecedor.documento"
+              class="form-control border-input" mask="000.000.000-00" placeholder="" required>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group">
+            <label>Telefone: </label>
+            <input type="text" class="form-control border-input" placeholder="Telefone"
+              [(ngModel)]="fornecedor.telefone" mask="(000) 00009-0000" required>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group">
+            <label>Email: </label>
+            <input type="email" class="form-control border-input" [(ngModel)]="fornecedor.email" placeholder="Email"
+              required>
+          </div>
+        </div>
+        <div class="row" style="height: 10px; padding: 10px;">
+        </div>
+
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <div class="col-md-6 text-center">
+              <button class="btn btn-success btn-fill btn-wd" (click)="cadastrarFornecedor()">
+                <i class="nc-icon nc-zoom-split" *ngIf="!loading">
+                  Confirmar
+                </i>
+              </button>
+            </div>
+            <div class="col-md-6 text-center">
+              <button class="btn btn-error btn-fill btn-wd" data-dismiss="modal" *ngIf="!loading">
+                <i class="nc-icon nc-zoom-split"></i>
+                Cancelar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

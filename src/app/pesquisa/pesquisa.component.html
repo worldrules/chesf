@@ -1,0 +1,72 @@
+<div class="card">
+  <div class="header">
+    <h4 class="title">Pesquisa de Licitação</h4>
+    <p class="category">Licitações encontradas com o termo pesquisado: '{{ termoPesquisa }}'
+    </p>
+  </div>
+  <div class="content table-responsive" *ngIf="!carregando">
+    <ngx-datatable
+    #myTable
+    class='material expandable'
+    [rows]="rows"
+    [groupRowsBy]="'status'"
+    [columnMode]="'force'"
+    [scrollbarH]="true"
+    [headerHeight]="50"
+    [footerHeight]="50"
+    [rowHeight]="40"
+    [limit]="4"
+    [groupExpansionDefault]="true">
+    <!-- Group Header Template -->
+    <ngx-datatable-group-header [rowHeight]="50" #myGroupHeader (toggle)="onDetailToggle($event)">
+      <ng-template let-group="group" let-expanded="expanded" ngx-datatable-group-header-template>
+        <div style="padding-left:5px;">
+          <a
+            href="#"
+            [class.datatable-icon-right]="!expanded"
+            [class.datatable-icon-down]="expanded"
+            title="Expand/Collapse Group"
+            (click)="toggleExpandGroup(group)">
+            <b>Status da Licitação: {{group.value[0].status}}</b>
+          </a>                          
+        </div>
+      </ng-template>
+    </ngx-datatable-group-header>
+    <!-- Row Column Template -->
+    <ngx-datatable-column
+      [width]="50"
+      [resizeable]="false"
+      [sortable]="false"
+      [draggable]="false"
+      [canAutoResize]="false">
+      <ng-template let-row="row" let-expanded="expanded" ngx-datatable-cell-template>
+        <a
+          href="javascript:void(0)"
+          [class.datatable-icon-right]="!expanded"
+          [class.datatable-icon-down]="expanded"
+          title="Expand/Collapse Row"
+          (click)="toggleExpandRow(row)">
+        </a>
+      </ng-template>
+    </ngx-datatable-column>
+    <ngx-datatable-column name="Name" prop="name" editable="true"></ngx-datatable-column>
+    <ngx-datatable-column name="Gender" prop="gender"></ngx-datatable-column>
+    <ngx-datatable-column name="Age" prop="age"></ngx-datatable-column>
+    <ngx-datatable-column name="Comment" prop="comment">
+      <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row" 
+      let-group="group" let-rowHeight="rowHeight">           
+        <input autofocus
+          (blur)="updateValue($event, 'comment', rowIndex)"
+          type="text" 
+          name="comment" 
+          [value]="value"/>
+      </ng-template>                
+    </ngx-datatable-column>
+  </ngx-datatable>
+  </div>
+
+  <div *ngIf="carregando" style="text-align: center;">
+    <img src="../../assets/img/loading.gif" height="50">
+  </div>
+</div>
+<app-detalhes-licitacao></app-detalhes-licitacao>

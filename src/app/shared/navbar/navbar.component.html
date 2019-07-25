@@ -1,0 +1,73 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" (click)="sidebarToggle()">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar bar1"></span>
+        <span class="icon-bar bar2"></span>
+        <span class="icon-bar bar3"></span>
+      </button>
+      <a class="navbar-brand" href="#">{{getTitle()}}</a>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a style="cursor: pointer;" (click)="esqueciSenha()" *ngIf="esqueciMinhaSenha">
+            <i class="ti-lock"></i>
+            <p style="margin-left:3px;">Esqueci a senha</p>
+          </a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li *ngIf="!logado">
+          <a (click)="login()" style="cursor: pointer;">
+            <i class="ti-lock"></i>
+            <p style="margin-left:3px;">Intranet</p>
+          </a>
+
+        </li>
+        <li *ngIf="logado">
+          <a (click)="mostraMenu()" id="usuario" style="cursor: pointer;">
+            <i class="ti-user"></i>
+            <p style="margin-right: 3px; margin-left: 3px;"> {{ perfilLogado }}</p>
+            <i id="arrowUser" class="ti-angle-down"></i>
+          </a>
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right" style="margin-right: 20px;">
+        <li>
+          <div style="display: inline-flex; margin-top: 10px;">
+            <input type="hidden" id="dadosPesquisa">
+            <input type="text" style="margin-top:5px; margin-bottom: 10px; margin-right: 5px;" autocomplete="off"
+              class="form-control border-input" placeholder="Pesquisar..." [(ngModel)]="pesquisa">
+            <button class="btn btn-sm btn-success btn-icon" style="margin-top:5px;" (click)="pequisaLicitacoes()"><i
+                class="fa fa-search"></i></button>
+          </div>
+        </li>
+        <swal #emptyPesquisa title="Pesquisa" text="Você precisa digitar alguma coisa no campo pesquisa para pesquisar."
+          type="info" [showCancelButton]="false" id="pesquisa">
+        </swal>
+      </ul>
+    </div>
+    <div class="col-md-12" id="userDados" *ngIf="situacao">
+      <ul class="nav navbar-nav navbar-right">
+        <li *ngIf="podeTrocarSenha">
+          <a (click)="trocaSenha()" style="cursor: pointer;">
+            <i class="ti-settings"></i>
+            <p style="margin-right: 3px; margin-left: 3px;"> Trocar senha</p>
+          </a>
+        </li>
+        <li *ngIf="logado">
+          <a (click)="logout()" style="cursor: pointer;">
+            <i class="ti-lock"></i>
+            <p style="margin-right: 3px; margin-left: 3px;"> Logout</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<app-modal-login></app-modal-login>
+<app-modal-trocasenha></app-modal-trocasenha>
+<app-modal-esquecisenha></app-modal-esquecisenha>

@@ -1,0 +1,51 @@
+<div class="card">
+  <div class="header">
+    <h4 class="title">Aviso de Licitação</h4>
+    <p class="category">Licitações que se encontram abertas até a data de hoje: {{ dataAtual | date : 'dd/MM/yyyy' }}
+    </p>
+  </div>
+  <div class="content table-responsive table-full-width" *ngIf="!carregando">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th style="min-width: 190px;">Número da Licitação</th>
+          <th style="text-align: center;">Descrição da Licitação</th>
+          <th style="text-align: center;">Aquisição do Edital até</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let licitacao of licitacoes">
+          <td style="text-align: center;"><a tooltip="Ver detalhes da Licitação" (click)="abreDetalhes(licitacao.nroEdital)"
+              style="cursor: pointer;">{{ licitacao.edital }}</a></td>
+          <td>{{ licitacao.objeto }}</td>
+          <td style="text-align: center;">{{ licitacao.dataAquisicao | date : 'dd/MM/yyyy' }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="text-center">
+      <!-- pager -->
+      <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+        <li [ngClass]="{disabled:pager.currentPage === 1}">
+          <a (click)="setPage(1)">Primeiro</a>
+        </li>
+        <li [ngClass]="{disabled:pager.currentPage === 1}">
+          <a (click)="setPage(pager.currentPage - 1)">Anterior</a>
+        </li>
+        <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+          <a (click)="setPage(page)">{{page}}</a>
+        </li>
+        <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+          <a (click)="setPage(pager.currentPage + 1)">Próximo</a>
+        </li>
+        <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+          <a (click)="setPage(pager.totalPages)">Último</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div *ngIf="carregando" style="text-align: center;">
+    <img src="../../assets/img/loading.gif" height="50">
+  </div>
+</div>
+<app-detalhes-licitacao></app-detalhes-licitacao>

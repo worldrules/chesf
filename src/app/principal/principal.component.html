@@ -1,0 +1,22 @@
+<div class="card">
+    <div class="header" style="text-align: center;">
+      <h4 class="title">e-Edital</h4>
+    </div>
+    <div class="content">
+      <p style="text-align: justify;">
+        {{ principal?.valor }}
+      </p>
+    </div>
+  </div>
+
+
+  <div class="card" *ngIf="principalDescricao != null"> 
+    <div class="header" style="text-align: center;">
+      <h4 class="title"></h4>
+    </div>
+    <div class="content">
+      <p style="text-align: justify;">
+        {{ principalDescricao?.valor }}
+      </p>
+    </div>
+  </div>
