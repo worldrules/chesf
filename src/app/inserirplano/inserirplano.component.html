@@ -1,3 +1,327 @@
-<p>
-  inserirplano works!
-</p>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Cadastro</title>
+</head>
+
+<body class="container-fluid">
+  <h4>Inserir Novo Plano<p style="color: red">RF . 6</p></h4>
+
+   <div class="row">
+    <div class="col-sm-3 ">
+      <label for="solicitante">Nome do solicitante</label>
+      <input type="text" class="form-control" id="solicitante" placeholder="Insira o nome do solicitante" readonly>
+      <button class="submit-lente mt-5 mr-2"><i class="fa fa-search"></i></button>
+    </div>
+
+
+    <div class="col-sm-3">
+      <label for="login">Login</label>
+      <input type="text" class="form-control" id="login" placeholder="" readonly>
+    </div>
+    <div class="col-sm-3">
+      <label for="exampleAmount">Orgão</label>
+      <div class="input-group">
+        <div class="input-group-prepend"></div>
+        <input type="text" class="form-control" id="exampleAmount" placeholder="" readonly>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <label for="foneramal">Fone / Ramal</label>
+      <div class="input-group">
+        <div class="input-group-prepend"></div>
+        <input type="text" class="form-control" id="foneramal" placeholder="Insira o telefone">
+      </div>
+    </div>
+  </div>
+  <!--Primeira ROW-->
+
+  <!--Divisor-->
+  <div class="separador">
+      <span class="textoCentro">
+       Dados da Empresa
+     </span>
+   </div>
+
+
+  <!--Segunda ROW-->
+  <div class="row  mb-3 mt-5">
+    <div class="col-sm-3">
+      <label for="empresa">Empresa</label>
+      <input type="text" class="form-control" id="empresa" placeholder="Insira o nome da empresa">
+    </div>
+    <div class="col-sm-3 ">
+      <label for="responsavel">Responsável</label>
+      <input type="text" class="form-control" id="exampleLast" placeholder="Insira o nome do Responsável">
+    </div>
+    <div class="col-sm-2">
+      <label for="foneramal2">Fone / Ramal</label>
+      <input type="text" class="form-control" id="foneramal2" placeholder="(51) 32658798">
+    </div>
+    <div class="col-sm-3">
+     <label for="email">Email</label>
+     <input type="text" class="form-control" id="email" placeholder="suporte@gmail.com.br">
+   </div>
+
+  </div>
+  <!--Divisor-->
+  <div class="separador">
+      <span class="textoCentro">
+       Dados da Obra
+     </span>
+   </div>
+
+<!--Row-->
+
+<!--Ajustar isso aqui-->
+
+
+<div class="row mb-3 mt-5">
+ <!-- <label for="fiscal" class="p-2">Data Prevista Inicial</label>
+ <input type="date" class="form-control col-sm-2">
+
+ <label for="fiscal" class="p-2">Data Prevista de Conclusão</label>
+ <input type="date" class="form-control col-sm-2"> -->
+
+
+ <div class="col-sm-4">
+   <label for="fiscal" class="p-2">Data Prevista Inicial</label>
+   <input type="date" name="" id="" class="form-control">
+ </div>
+
+ <div class="col-sm-4">
+     <label for="fiscal" class="p-2">Data Prevista de Conclusão</label>
+     <input type="date" name="" id="" class="form-control">
+   </div>
+
+
+ <div class="col-sm-4 mt-3">
+      <label for="nmProcesso">Número do Processo</label>
+      <input type="text" class="form-control" id="nmProcesso" placeholder="9848534685486879">
+ </div>
+</div>
+
+
+  <!--Terceira Row-->
+  <div class="row  mb-3">
+    <div class="col-sm-8">
+      <label for="descObra">Descrição da Obra / Serviço</label>
+      <input type="text" class="form-control" id="descObra" placeholder="O projeto proposto para o Espaço de Instalações do Museu do Açude...">
+    </div>
+    <div class="col-sm-4 mt-1">
+      <label for="tipoObra">Tipo da Obra / Serviço</label>
+      <!-- <input type="text" class="form-control" id="tipoObra" placeholder="forma de contratar a obra pode ser de dois tipos, por empreitada global, isto é fixa-se um preço total onde o contratado no prazo"> -->
+      <select name="" id="" class="form-control">
+        <option value="">Opt 1 </option>
+        <option value="">Opt 2 </option>
+        <option value="">Opt 3 </option>
+        <option value="">Opt 4</option>
+        <option value="">Opt 5 </option>
+        <option value="">Opt 6 </option>
+      </select>
+    </div>
+
+  </div>
+  <!--Final  Terceira Row-->
+
+
+
+  <!--Final Row-->
+
+
+  <!--Divisor-->
+  <div class="separador">
+     <span class="textoCentro">
+       Dados do Plano de Segurança
+     </span>
+   </div>
+
+  <!--Quarta Row-->
+
+  <!--AJustar o radio com jquery-->
+  <div class="row mt-5">
+    <div class="col-md-4">
+      <label for="exampleAccount">Situação do Plano</label>
+      <div class="form-group large">
+        <div class="form-check form-check-inline">
+          <label class="form-check-label">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+            Aprovado
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <label class="form-check-label">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="exig">
+            Em exigência
+          </label>
+        </div>
+        <div class="form-check form-check-inline ">
+          <label class="form-check-label">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+            Cancelado
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <label class="form-check-label">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option4">
+            Encerrado
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div id="divExig" name="divExig" style="display: none">
+        <label for="">Exigência</label>
+        <input type="text" class="form-control">
+    </div>
+    <div class="col-md-2">
+       <label for="exampleAccount">Tipo do Plano</label>
+       <div class="form-group large">
+         <div class="form-check form-check-inline">
+           <label class="form-check-label">
+             <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+             1
+           </label>
+         </div>
+         <div class="form-check form-check-inline">
+           <label class="form-check-label">
+             <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+             2
+           </label>
+         </div>
+         <div class="form-check form-check-inline">
+           <label class="form-check-label">
+             <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> 3
+           </label>
+         </div>
+       </div>
+     </div>
+
+   <div></div>
+     <label for="descObra" class="">Plano Auditado pela Regional</label>
+    <div class="form-check form-check-inline">
+       <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="opcao1">
+       <label class="form-check-label" for="inlineCheckbox1">Fortaleza</label>
+     </div>
+     <div class="form-check form-check-inline">
+       <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="opcao2">
+       <label class="form-check-label" for="inlineCheckbox2">Recife</label>
+     </div>
+     <div class="form-check form-check-inline">
+       <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="opcao3">
+       <label class="form-check-label" for="inlineCheckbox3">Sobradinho</label>
+     </div>
+     <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="opcao1">
+        <label class="form-check-label" for="inlineCheckbox1">Paulo Afonso</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="opcao2">
+        <label class="form-check-label" for="inlineCheckbox2">Salvador</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="opcao3">
+        <label class="form-check-label" for="inlineCheckbox3">Teresina</label>
+      </div>
+
+  </div>
+
+  <!--Quinta ROW-->
+
+  <div class="row">
+
+  </div>
+
+  <!--Sexta Row-->
+
+
+
+
+  <!--Sétima Row-->
+
+
+
+  <div class="row mb-4">
+  <div class="col-sm-12">
+     <label for="">Número da C.I.</label>
+     <input type="text" class="form-control">
+   </div>
+ </div>
+
+
+
+    <!-- <label for="admin" class="p-2">Administrador do contrato</label>
+    <input type="text" class="form-control col-sm-3" id="admin">
+    <button class="pb-3 ajuste"><i class="icone fa fa-search "></i></button> -->
+
+    <div class="row mb-3">
+     <div class="col-sm-3">
+       <label for="admin">Administrador do Contrato</label>
+       <input type="text" class="form-control" id="admin" placeholder="Insira o nome do administrador do contrato">
+     </div>
+     <div class="col-sm-3">
+       <label for="login">Login</label>
+       <input type="text" class="form-control" id="login" placeholder="Insira o login">
+     </div>
+     <div class="col-sm-3">
+       <label for="orgao">Orgão</label>
+       <div class="input-group">
+         <div class="input-group-prepend"></div>
+         <input type="text" class="form-control" id="orgao" placeholder="Insira o orgão">
+       </div>
+     </div>
+     <div class="col-sm-3">
+       <label for="foneramal">Fone / Ramal</label>
+       <div class="input-group">
+         <div class="input-group-prepend"></div>
+         <input type="text" class="form-control" id="foneramal" placeholder="Insira o telefone">
+       </div>
+     </div>
+   </div>
+
+     <!--Divisor-->
+  <!-- <nav aria-label="breadcrumb">
+   <ol class="breadcrumb form-control">
+     <li class="breadcrumb-item active " aria-current="page">Responsável pelo contrato / análise do plano</li>
+   </ol>
+ </nav>
+
+ <div class="row mb-3">
+   <div class="col-sm-3">
+     <label for="nome">Nome</label>
+     <input type="text" class="form-control" id="nome" placeholder="Insira o nome do responsável pelo contrato">
+   </div>
+   <div class="col-sm-1">
+     <label for="login">Login</label>
+     <input type="text" class="form-control" id="login" placeholder="Login">
+   </div>
+   <div class="col-sm-1">
+     <label for="diret">Diret.</label>
+     <input type="text" class="form-control" id="diret" placeholder="Diret.">
+   </div>
+   <div class="col-sm-2">
+     <label for="orgao">Orgão</label>
+     <div class="input-group">
+       <div class="input-group-prepend"></div>
+       <input type="text" class="form-control" id="orgao" placeholder="Insira o orgão">
+     </div>
+   </div>
+   <div class="col-sm-2">
+     <label for="foneramal">Fone / Ramal</label>
+     <div class="input-group">
+       <div class="input-group-prepend"></div>
+       <input type="text" class="form-control" id="foneramal" placeholder="Insira o telefone">
+     </div>
+   </div>
+   <div class="col-sm-2">
+     <label for="dataCadastro">Data do Cadastro</label>
+     <div class="input-group">
+       <div class="input-group-prepend"></div>
+       <input type="date" class="form-control" id="dataCadastro">
+     </div>
+   </div>
+ </div> -->
+ <button class="btn btn-primary" id="salvar">Salvar</button>
+
+</body> <!--End Sétima Row-->

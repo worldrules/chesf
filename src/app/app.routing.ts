@@ -1,6 +1,8 @@
+import { ItemsComponent } from './items/items.component';
+import { AuditoriasComponent } from './auditorias/auditorias.component';
 import { Routes } from '@angular/router';
 
-import { PrincipalComponent }   from './principal/principal.component';
+import { PrincipalComponent } from './principal/principal.component';
 import { AvisolicitacaoComponent } from './avisolicitacao/avisolicitacao.component';
 import { ExpiradosComponent } from './expirados/expirados.component';
 import { ComoparticiparComponent } from './comoparticipar/comoparticipar.component';
@@ -25,17 +27,19 @@ import { ModeloEmailComponent } from './configuracoes/gerais/modeloemail/modeloe
 import { ListaRegionaisComponent } from './configuracoes/gerais/listaregionais/listaregionais.component';
 import { RegistroDownloadsComponent } from './configuracoes/gerais/registrodownloads/registrodownloads.component';
 import { GeraisComponent as GeralFornecedor } from './configuracoes/fornecedor/gerais/gerais.component';
-import { LogSistemaComponent } from './logsistema/logsistema.component';
 import { ModeloParaEmailComponent } from './configuracoes/fornecedor/modeloparaemail/modeloparaemail.component';
 import { AuthGuard } from './_infra/_guards/auth.guard';
 import { InserirplanoComponent } from './inserirplano/inserirplano.component';
+import { LoginInicialComponent } from './login-inicial/login-inicial.component';
+import { PlanosdesegurancaComponent } from './planosdeseguranca/planosdeseguranca.component';
+import { TipodeobraComponent } from './tipodeobra/tipodeobra.component';
+
 
 
 export const AppRoutes: Routes = [
     {
         path: '',
-        redirectTo: 'principal',
-        pathMatch: 'full',
+        component: LoginInicialComponent,
     },
     {
         path: 'principal',
@@ -45,6 +49,24 @@ export const AppRoutes: Routes = [
       path: 'inserirnovoplano',
       component: InserirplanoComponent
     },
+    {
+      path: 'planosdeseguranca',
+      component: PlanosdesegurancaComponent
+    },
+    {
+      path: 'auditorias',
+      component: AuditoriasComponent
+    },
+    {
+      path: 'items',
+      component: ItemsComponent
+      },
+      {
+        path: 'tipodeobra',
+        component: TipodeobraComponent
+        },
+
+
     {
         path: 'avisolicitacao',
         component: AvisolicitacaoComponent
@@ -166,9 +188,4 @@ export const AppRoutes: Routes = [
         component: ModeloParaEmailComponent,
         canActivate: [AuthGuard]
     },
-    {
-        path: 'logsistema',
-        component: LogSistemaComponent,
-        canActivate: [AuthGuard]
-    }
-]
+];

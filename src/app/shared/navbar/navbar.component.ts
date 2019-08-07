@@ -13,8 +13,10 @@ declare var $: any;
 @Component({
     moduleId: module.id,
     selector: 'navbar-cmp',
-    templateUrl: 'navbar.component.html'
+    templateUrl: 'navbar.component.html',
+    styleUrls: ['./navbar.component.scss']
 })
+
 
 export class NavbarComponent implements OnInit {
     @ViewChild('emptyPesquisa', { static: false }) private emptySwal: SwalComponent;
@@ -34,7 +36,8 @@ export class NavbarComponent implements OnInit {
     perfilLogado;
     situacao = false;
     esqueciMinhaSenha = false;
-    podeTrocarSenha: boolean = false;
+    podeTrocarSenha = false;
+    data = new Date().toLocaleDateString();
 
     @ViewChild("navbar-cmp", { static: false }) button;
 
@@ -50,7 +53,7 @@ export class NavbarComponent implements OnInit {
 
     ngOnInit() {
         this.listTitles = ROUTES.filter(listTitle => listTitle);
-        var navbar: HTMLElement = this.element.nativeElement;
+        const navbar: HTMLElement = this.element.nativeElement;
         this.toggleButton = navbar.getElementsByClassName('navbar-toggle')[0];
         this.router.events.subscribe((event) => {
             this.sidebarClose();
@@ -72,8 +75,7 @@ export class NavbarComponent implements OnInit {
                     this.esqueciMinhaSenha = false;
 
                     //this.autenticaService.currentUserADSubject.next((user as Usuario));
-                }
-                else {
+                } else {
                     this.logado = false;
                     this.perfilLogado = null;
                     this.podeTrocarSenha = false;
@@ -81,8 +83,7 @@ export class NavbarComponent implements OnInit {
                     this.esqueciMinhaSenha = true;
                 }
             });
-        }
-        else {
+        } else {
             this.autenticaService.currentFornecedorSubject.subscribe(user => {
                 if (user != null) {
                     this.logado = true;
@@ -91,8 +92,7 @@ export class NavbarComponent implements OnInit {
                     this.situacao = true;
                     this.esqueciMinhaSenha = false;
                     //this.autenticaService.currentFornecedorSubject.next((user as Fornecedor));
-                }
-                else {
+                } else {
                     this.logado = false;
                     this.perfilLogado = null;
                     this.podeTrocarSenha = false;
@@ -106,7 +106,7 @@ export class NavbarComponent implements OnInit {
     }
 
     getTitle() {
-        var titlee = window.location.pathname;
+        let titlee = window.location.pathname;
         titlee = titlee.substring(1);
         for (var item = 0; item < this.listTitles.length; item++) {
             if (this.listTitles[item].path === titlee) {
@@ -129,28 +129,27 @@ export class NavbarComponent implements OnInit {
     sidebarOpen() {
         const toggleButton = this.toggleButton;
         const body = document.getElementsByTagName('body')[0];
-        setTimeout(function () {
+        setTimeout(() => {
             toggleButton.classList.add('toggled');
         }, 500);
 
         body.classList.add('nav-open');
 
         this.sidebarVisible = true;
-    };
+    }
 
     sidebarClose() {
         const body = document.getElementsByTagName('body')[0];
         this.toggleButton.classList.remove('toggled');
         this.sidebarVisible = false;
         body.classList.remove('nav-open');
-    };
+    }
 
     pequisaLicitacoes() {
-        if (this.pesquisa == undefined || this.pesquisa == "") {
+        if (this.pesquisa === undefined || this.pesquisa === '') {
             this.emptySwal.show();
-        }
-        else {
-            $("#dadosPesquisa").val(this.pesquisa);
+        } else {
+            $('#dadosPesquisa').val(this.pesquisa);
             this.router.navigate(['/pesquisa']);
         }
     }
@@ -177,20 +176,20 @@ export class NavbarComponent implements OnInit {
     mostraMenu() {
         if (this.situacao) {
             this.situacao = false;
-            $("#arrowUser").removeClass('ti-angle-up');
-            $("#arrowUser").addClass('ti-angle-down');
+            $('#arrowUser').removeClass('ti-angle-up');
+            $('#arrowUser').addClass('ti-angle-down');
 
-            $("#userDados").css('display', 'block');
+            $('#userDados').css('display', 'block');
         } else {
             this.situacao = true;
-            $("#arrowUser").removeClass('ti-angle-down');
-            $("#arrowUser").addClass('ti-angle-up');
+            $('#arrowUser').removeClass('ti-angle-down');
+            $('#arrowUser').addClass('ti-angle-up');
 
-            $("#userDados").css('display', 'none');
+            $('#userDados').css('display', 'none');
         }
     }
 
-    esqueciSenha(){
-        this.modalService.open('modalEsqueciSenha');
-    }
+    esqueciSenha() {
+      this.modalService.open('modalEsqueciSenha');
+  }
 }

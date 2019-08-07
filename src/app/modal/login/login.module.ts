@@ -11,4 +11,4 @@ import { LoginComponent } from '../../../app/modal/login/login.component';
     exports: [LoginComponent]
 })
 
-export class LoginModule { }
+export class LoginModule {}

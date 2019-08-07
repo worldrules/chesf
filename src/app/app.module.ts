@@ -7,6 +7,7 @@ import { NgxMaskModule } from 'ngx-mask';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
+
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutes } from './app.routing';
@@ -20,7 +21,7 @@ import { AuthenticationService } from './_infra/_services/authentication.service
 import { LicitacaoService } from './_infra/_services/licitacao.service';
 import { ComoParticiparService } from './_infra/_services/comoparticipar.service';
 import { PrincipalService } from './_infra/_services/principal.service';
-
+import { LoginInicialComponent } from './login-inicial/login-inicial.component';
 import { PrincipalComponent } from './principal/principal.component';
 import { ExpiradosComponent } from './expirados/expirados.component';
 import { AvisolicitacaoComponent } from './avisolicitacao/avisolicitacao.component';
@@ -79,6 +80,10 @@ import { DetalheExpiradoComponent } from './modal/aviso/detalhesexpirado/detalhe
 import { DetalheNaoPublicadoComponent } from './modal/aviso/detalhesnaopublicado/detalheNaoPublicado.component';
 import { DetalheGeralComponent } from './modal/aviso/detalhesgeral/detalheGeral.component';
 import { InserirplanoComponent } from './inserirplano/inserirplano.component';
+import { PlanosdesegurancaComponent } from './planosdeseguranca/planosdeseguranca.component';
+import { AuditoriasComponent } from './auditorias/auditorias.component';
+import { ItemsComponent } from './items/items.component';
+import { TipodeobraComponent } from './tipodeobra/tipodeobra.component';
 
 @NgModule({
   declarations: [
@@ -117,7 +122,12 @@ import { InserirplanoComponent } from './inserirplano/inserirplano.component';
     DetalheExpiradoComponent,
     DetalheNaoPublicadoComponent,
     DetalheGeralComponent,
-    InserirplanoComponent
+    InserirplanoComponent,
+    LoginInicialComponent,
+    PlanosdesegurancaComponent,
+    AuditoriasComponent,
+    ItemsComponent,
+    TipodeobraComponent
   ],
   imports: [
     HttpClientModule,
@@ -131,7 +141,7 @@ import { InserirplanoComponent } from './inserirplano/inserirplano.component';
     CadastroFornecedorModule,
     DetalhesLicitacaoModule,
     BrowserAnimationsModule,
-    TrocaSenhaModule,    
+    TrocaSenhaModule,
     EsqueciSenhaModule,
     FiltroAvisoModule,
     NgxDatatableModule,
@@ -167,6 +177,5 @@ import { InserirplanoComponent } from './inserirplano/inserirplano.component';
 })
 
 export class AppModule {
-  
   constructor() { }
 }

@@ -5,23 +5,25 @@ import { ModalService } from '../../../app/_infra/_services/modal.service';
 
 declare var $: any;
 
+
+
 export interface RouteInfo {
     path: string;
     title: string;
     icon: string;
     class: string;
-    idSubMenu:string;
+    idSubMenu: string;
     submenu: RouteInfo[];
-}
+
+  }
+    // ES6
 
 export const ROUTES: RouteInfo[] = [
-    { path: 'logsistema', idSubMenu: '', title: 'Login', icon: '', class: '', submenu: [] },
+    { path: 'login', idSubMenu: '', title: 'Login', icon: '', class: '', submenu: [] },
     { path: 'principal', idSubMenu: '', title: 'Principal', icon: 'ti-home', class: '', submenu: [] },
     { path: 'inserirnovoplano', idSubMenu: '', title: 'Inserir Novo Plano', icon: 'ti-folder', class: '', submenu: [] },
     { path: 'planosdeseguranca', idSubMenu: '', title: 'Planos de Segurança', icon: 'ti-control-play', class: '', submenu: [] },
     { path: 'auditorias', idSubMenu: '', title: 'Auditorias', icon: 'fas fa-university', class: '', submenu: [] },
-    { path: 'comunicacoesinternas', idSubMenu: '', title: 'Comunicações Internas', icon: 'fas fa-mobile-alt', class: '', submenu: [] },
-    { path: 'atas', idSubMenu: '', title: 'Atas', icon: 'fas fa-file', class: '', submenu: [] },
     { path: 'items', idSubMenu: '', title: 'Items', icon: 'fas fa-cubes', class: '', submenu: [] },
     { path: 'tipodeobra', idSubMenu: '', title: 'Tipo de Obra', icon: 'fas fa-wrench', class: '', submenu: [] },
 ];
@@ -92,8 +94,8 @@ export class SidebarComponent implements OnInit {
     logado = false;
 
     constructor(private authService: AuthenticationService,
-        private modalService: ModalService,
-        public route: Router) {
+                private modalService: ModalService,
+                public route: Router) {
     }
 
     ngOnInit() {
@@ -109,8 +111,7 @@ export class SidebarComponent implements OnInit {
         this.authService.currentFornecedor.subscribe(user => {
             if (user != null){
                 this.logado = true;
-            }
-            else {
+            } else {
                 this.logado = false;
             }
         });
@@ -124,15 +125,14 @@ export class SidebarComponent implements OnInit {
     }
 
     expandItem(id){
-        if($("#" + id).hasClass('in')){
-            $("#" + id).removeClass('in');
-        }
-        else{
-            $("#" + id).addClass('in');
+        if ($('#' + id).hasClass('in')) {
+            $('#' + id).removeClass('in');
+        } else {
+            $('#' + id).addClass('in');
         }
     }
 
     abrirInscrevase() {
-        this.modalService.open('cadastroFornecedor')
+        this.modalService.open('cadastroFornecedor');
     }
 }

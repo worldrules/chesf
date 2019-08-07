@@ -1,0 +1,66 @@
+<body class="container-fluid">
+    <h4>Tipo de Obra<p style="color: red">RF . 12</p>
+    </h4>
+
+
+    <div class="row">
+      <div class='col-sm-3'>
+        <label>Descrição da obra
+          <div>
+            <input
+             (keyup)="onKeyUp($event)"
+             type="text" class="form-control" id="descricao">
+          </div>
+        </label>
+      </div>
+
+      <div class="col-sm-3">
+        <label>Categoria
+          <div>
+            <select
+            name="" id="" class="form-control">
+              <option value="option 1">Opção 1</option>
+              <option value="option 2">Opção 2</option>
+              <option value="option 3">Opção 3</option>
+              <option value="option 4">Opção 4</option>
+              <option value="option 5">Opção 5</option>
+            </select>
+          </div>
+        </label>
+      </div>
+    </div>
+
+    <div class="row">
+        <button
+        (click)="incluiObra()"
+        class="btn btn-primary">Incluir</button>
+        <button class="btn btn-primary">Alterar</button>
+        <button class="btn btn-danger">Excluir</button>
+    </div>
+
+      <!--Row-->
+      <div class="row">
+          <div class="table-responsive">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Item</th>
+                  <th>Categoria</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let obra of tiposDeObra">
+                  <td>{{ nomeDaObra }}</td>
+                  <td>{{ catDaObra }}</td>
+                </tr>
+
+
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!--Fim da Row-->
+
+
+  </body>

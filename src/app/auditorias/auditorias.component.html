@@ -1,0 +1,215 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+</head>
+
+<body class="container-fluid">
+  <h4>Agendamento de Auditoria<p style="color: red">RF . 9</p></h4>
+  <div class="row mt-4">
+    <div class="col-sm-3 pb-3">
+      <label for="admin">Administrador do Contrato</label>
+      <input type="text" class="form-control" id="admin" placeholder="...">
+    </div>
+    <div class="col-sm-3 pb-3">
+      <label for="login">Login</label>
+      <input type="text" class="form-control" id="login" placeholder="...">
+    </div>
+    <div class="col-sm-3 pb-3">
+      <label for="orgao">Órgão</label>
+      <input type="text" class="form-control" id="orgao" placeholder="...">
+    </div>
+    <div class="col-sm-3 pb-3">
+      <label for="foneramal">Fone/Ramal</label>
+      <input type="text" class="form-control" id="foneramal" placeholder="...">
+    </div>
+    <!--Separador-->
+
+    <!-- <div class="alert alert-dark form-control p-1" role="alert">
+     Responsável pelo Contrato / Análise do plano
+ </div> -->
+
+    <!--Divisor-->
+    <div style="width: 100%; height: 20px; border-bottom: 1px solid black; text-align: center">
+      <span style="font-size: 30px; background-color: white; padding: 0 10px;">
+        Responsável pelo Contrato / Análise do plano
+      </span>
+    </div>
+
+    <!--Separador-->
+
+    <div class="row mt-5 col-12">
+      <input type="text" class="form-control">
+      <input type="text" class="form-control">
+      <input type="text" class="form-control">
+      <input type="text" class="form-control">
+    </div>
+    <!--Separador-->
+
+  </div>
+  <!--Fim da ROW-->
+
+  <div class="row">
+
+    <!--Divisor-->
+    <div style="width: 100%; height: 20px; border-bottom: 1px solid black; text-align: center">
+      <span style="font-size: 30px; background-color: white; padding: 0 10px;">
+        Status da Obra / Serviço
+      </span>
+    </div>
+  </div>
+
+  <div class="row mt-5 mb-3">
+    <!--ROW dos radios-->
+    <div class="form-check-inline">
+      <label class="form-check-label">
+        <input type="radio" class="form-check-input" name="optradio">Em andamento
+      </label>
+    </div>
+    <div class="form-check-inline p-1">
+      <label class="form-check-label">
+        <input type="radio" class="form-check-input" name="optradio">Encerrada
+      </label>
+    </div>
+    <div class="form-check-inline">
+      <label class="form-check-label">
+        <input type="radio" class="form-check-input" name="optradio">Interditada / Embargada
+      </label>
+    </div>
+  </div>
+
+  <!--Separador-->
+  <div class="row">
+
+    <div style="width: 100%; height: 20px; border-bottom: 1px solid black; text-align: center">
+      <span style="font-size: 30px; background-color: white; padding: 0 10px;">
+        Dados da Obra / Serviço
+      </span>
+    </div>
+  </div>
+  <!--Fim da Row-->
+
+  <div class="row mt-5">
+    <label for="numeroContrato" class="mr-3">Número do Contrato</label>
+    <input type="text" class="form-control col-sm-1">
+
+    <label for="fiscal" class="p-2">Fiscal da Obra / Serviço</label>
+    <input type="text" class="form-control col-sm-2" id="fiscal">
+    <button class="pb-3 ajuste"><i class="icone fa fa-search "></i></button>
+
+    <label for="fiscal" class="p-2">Data de Início da Vigência (contrato)</label>
+    <input type="date" class="form-control col-sm-1">
+    <label for="fiscal" class="p-2">Data de Fim da Vigência (contrato)</label>
+    <input type="date" class="form-control col-sm-1">
+
+  </div>
+  <!--Fim da Row-->
+
+  <div class="row mt-2">
+    <label for="fiscal" class="p-2">Audititores</label>
+    <input type="text" class="form-control col-sm-6" id="fiscal">
+    <button class="pb-3 ajuste"><i class="icone fa fa-search "></i></button>
+
+    <label for="fiscal" class="p-2">Data de Inicio da Auditoria</label>
+    <input type="date" class="form-control col-sm-1">
+  </div>
+
+
+  <div class="row mt-5">
+
+    <div style="width: 100%; height: 20px; border-bottom: 1px solid black; text-align: center">
+      <span style="font-size: 30px; background-color: white; padding: 0 10px;">
+        Exigências Estabelecidas
+      </span>
+    </div>
+    <textarea name="exigencias" id="exigencias" cols="30" rows="10" class="form-control mt-5"
+      placeholder="O planejamento do canteiro de obras, ou planejamento de “layout” como também é chamado, pode ser definido como o planejamento da logística da obra, como a disposição das instalações provisórias, armazenamento de materiais, movimentação de trabalhadores e máquinas, entre outros....."></textarea>
+  </div>
+  <!--
+
+  <div class="row">
+   <div class="alert alert-dark form-control p-1" role="alert">
+      Dados dos itens de Verificação
+   </div>
+   </div>
+
+  <div class="row">
+   <div class="alert alert-dark form-control p-1" role="alert">
+       Criar Formulário para Auditoria Externa
+   </div>
+   </div>
+
+<div class="row">
+ <div class="table-responsive">
+         <table class="table table-bordered">
+           <thead>
+             <tr>
+               <th>N*</th>
+               <th>Descrição do Item</th>
+               <th>Classificação</th>
+             </tr>
+           </thead>
+           <tbody>
+                         <td>1</td>
+                         <td>Gas</td>
+                         <td>
+                           <input type="checkbox" name="" id="">
+                           <label>Leve</label>
+                           <input type="checkbox" name="" id="">
+                           <label>Moderado</label>
+                           <input type="checkbox" name="" id="">
+                           <label>Alto</label>
+                         </td>
+
+                       </tr>
+                       <tr>
+                               <td>2</td>
+                               <td>Teste</td>
+                               <td><input type="checkbox" name="" id="">
+                                 <label>Leve</label>
+                                 <input type="checkbox" name="" id="">
+                                 <label>Moderado</label>
+                                 <input type="checkbox" name="" id="">
+                                 <label>Alto</label></td>
+
+
+
+           </tbody>
+         </table>
+       </div>
+     </div>   -->
+  <div class="row">
+    <button class="btn btn-primary form-inline m-2 float-right">Voltar</button>
+    <button class="btn btn-success form-inline m-2" id="salvar" data-toggle="modal" data-target=".modal">Salvar e
+      Enviar</button>
+  </div>
+
+  <!--MODAL-->
+
+  <div class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Cadastro de Auditoria</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Tem certeza que deseja selecionar essa opção</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary eoq" data-dismiss="modal">Fechar</button>
+          <button type="button" class="btn btn-primary sim">Sim</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!--/container-->
+</body>

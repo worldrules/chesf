@@ -11,21 +11,20 @@
     </div>
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
+        <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Logout"><i class="fas fa-sign-out-alt"></i></button>
+        <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Ajuda"><i class="fas fa-question-circle"></i></button>
         <li>
-          <a style="cursor: pointer;" (click)="esqueciSenha()" *ngIf="esqueciMinhaSenha">
-            <i class="ti-lock"></i>
-            <p style="margin-left:3px;">Esqueci a senha</p>
-          </a>
+            <p id="dataStyle">{{ data }}</p>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li *ngIf="!logado">
+        <!-- <li *ngIf="!logado">
           <a (click)="login()" style="cursor: pointer;">
             <i class="ti-lock"></i>
             <p style="margin-left:3px;">Intranet</p>
           </a>
 
-        </li>
+        </li> -->
         <li *ngIf="logado">
           <a (click)="mostraMenu()" id="usuario" style="cursor: pointer;">
             <i class="ti-user"></i>
@@ -36,7 +35,7 @@
       </ul>
 
       <ul class="nav navbar-nav navbar-right" style="margin-right: 20px;">
-        <li>
+        <!-- <li>
           <div style="display: inline-flex; margin-top: 10px;">
             <input type="hidden" id="dadosPesquisa">
             <input type="text" style="margin-top:5px; margin-bottom: 10px; margin-right: 5px;" autocomplete="off"
@@ -44,7 +43,7 @@
             <button class="btn btn-sm btn-success btn-icon" style="margin-top:5px;" (click)="pequisaLicitacoes()"><i
                 class="fa fa-search"></i></button>
           </div>
-        </li>
+        </li> -->
         <swal #emptyPesquisa title="Pesquisa" text="Você precisa digitar alguma coisa no campo pesquisa para pesquisar."
           type="info" [showCancelButton]="false" id="pesquisa">
         </swal>
@@ -52,12 +51,16 @@
     </div>
     <div class="col-md-12" id="userDados" *ngIf="situacao">
       <ul class="nav navbar-nav navbar-right">
+
+
         <li *ngIf="podeTrocarSenha">
           <a (click)="trocaSenha()" style="cursor: pointer;">
             <i class="ti-settings"></i>
             <p style="margin-right: 3px; margin-left: 3px;"> Trocar senha</p>
           </a>
         </li>
+
+
         <li *ngIf="logado">
           <a (click)="logout()" style="cursor: pointer;">
             <i class="ti-lock"></i>

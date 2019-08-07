@@ -10,9 +10,15 @@ import { TrocaSenhaModule } from '../../../app/modal/trocasenha/trocasenha.modul
 import { TrocaSenhaComponent } from '../../../app/modal/trocasenha/trocasenha.component';
 import { EsqueciSenhaModule } from '../../../app/modal/esquecisenha/esquecisenha.module';
 
+
 @NgModule({
-    imports: [ RouterModule, CommonModule, FormsModule, SweetAlert2Module, LoginModule, TrocaSenhaModule, EsqueciSenhaModule ],    declarations: [NavbarComponent],
+    imports: [ RouterModule, CommonModule, FormsModule,
+       SweetAlert2Module, LoginModule, TrocaSenhaModule,
+        EsqueciSenhaModule ],
+    declarations: [NavbarComponent],
+
     exports: [NavbarComponent],
+
     entryComponents: [LoginComponent, TrocaSenhaComponent],
 })
 
