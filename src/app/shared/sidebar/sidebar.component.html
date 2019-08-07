@@ -5,7 +5,7 @@
         </div>
         <div id="saust">SAUST</div>
     </div>
-    <ul class="nav">
+    <ul class="nav" id="sidebarPrincipal">
         <li class="divider" *ngIf="isNotMobileMenu()"></li>
         <li *ngFor="let menuItem of menuItems" routerLinkActive="active" class="{{menuItem.class}}">
             <a *ngIf="menuItem.path != 'null'" [routerLink]="[menuItem.path]" style="cursor:pointer;">
@@ -44,7 +44,7 @@
                 </ul>
             </div>
         </li>
-        <li class="active-pro" >
+        <!-- <li class="active-pro" >
             <a style="cursor:pointer;" *ngIf="!logado" (click)="abrirInscrevase()">
                 <i class="ti-plus"></i>
                 <p>Inscrever-se</p>
@@ -53,7 +53,7 @@
                 <i class="ti-help-alt"></i>
                 <p>Ajuda</p>
             </a>
-        </li>
+        </li> -->
     </ul>
 </div>
 

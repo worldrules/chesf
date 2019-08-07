@@ -78,6 +78,7 @@ import { DetalhePublicadoComponent } from './modal/aviso/detalhespublicado/detal
 import { DetalheExpiradoComponent } from './modal/aviso/detalhesexpirado/detalheExpirado.component';
 import { DetalheNaoPublicadoComponent } from './modal/aviso/detalhesnaopublicado/detalheNaoPublicado.component';
 import { DetalheGeralComponent } from './modal/aviso/detalhesgeral/detalheGeral.component';
+import { InserirplanoComponent } from './inserirplano/inserirplano.component';
 
 @NgModule({
   declarations: [
@@ -115,7 +116,8 @@ import { DetalheGeralComponent } from './modal/aviso/detalhesgeral/detalheGeral.
     DetalhePublicadoComponent,
     DetalheExpiradoComponent,
     DetalheNaoPublicadoComponent,
-    DetalheGeralComponent
+    DetalheGeralComponent,
+    InserirplanoComponent
   ],
   imports: [
     HttpClientModule,

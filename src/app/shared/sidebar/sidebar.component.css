@@ -3,3 +3,11 @@
   color:rgb(103, 169, 199);
   font-weight: bold;
 }
+
+#sidebarPrincipal {
+  margin: 0%;
+}
+
+#sidebarPrincipal a {
+  padding: 1%;
+}

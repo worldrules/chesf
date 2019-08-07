@@ -25,7 +25,7 @@
         .divider{
             background-color: rgba($font-color,.2);
         }
-        
+
     }
 
 }
@@ -34,7 +34,7 @@
     .nav{
         li{
             &.active > a{
-                color: #8B4513;
+                color: rgb(65, 124, 190) !important;
                 opacity: 1;
             }
         }

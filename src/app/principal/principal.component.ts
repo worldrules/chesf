@@ -13,6 +13,12 @@ declare var $: any;
 export class PrincipalComponent implements OnInit {
   principal: any;
   principalDescricao: any;
+  jumboTitulo: string = "Sistema de Auditoria de Segurança do Trabalho (SAUST)";
+  
+  verMais: string =`É um instrumento gerencial que tem como objetivo identificar parâmetros
+  não-conformes que reduzem o desempenho da qualidade de produtos, operações, logística ou
+  aumentam os riscos de acidentes ou doenças profissionais no ambiente de trabalho. Nesse
+  artigo explicaremos a relação da auditoria e segurança do trabalho.`;;
 
   constructor(private principalService: PrincipalService, private autenticacaoService: AuthenticationService) { }
 
@@ -22,7 +28,7 @@ export class PrincipalComponent implements OnInit {
 
     this.autenticacaoService.currentUserADSubject.subscribe(data => {
       if (data == null) {
-        this.principalDescricao = null;       
+        this.principalDescricao = null;
       } else {
         this.carregaDescricaoPrincipal();
       }
@@ -30,7 +36,7 @@ export class PrincipalComponent implements OnInit {
 
     this.autenticacaoService.currentFornecedorSubject.subscribe(data => {
       if (data == null) {
-        this.principalDescricao = null;       
+        this.principalDescricao = null;
       } else {
         this.carregaDescricaoPrincipal();
       }

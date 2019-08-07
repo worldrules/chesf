@@ -3,6 +3,7 @@ import { environment } from '../../../environments/environment';
 export const baseApi = { url: environment.baseUrl }
 
 export const Url = {
+    logsistema: '',
     principal: baseApi.url + 'consulta/principal',
     comoParticipar: baseApi.url + 'consulta/comoparticipar',
     descricaoPrincipal:  baseApi.url + 'consulta/principal/descricao',
@@ -22,9 +23,9 @@ export const Url = {
         emConfiguracao: {
             recupera: baseApi.url + 'aviso/emconfiguracao/pesquisa',
             recuperaTotal: baseApi.url + 'aviso/emconfiguracao/total',
-            getDetalhes: baseApi.url + 'aviso/emconfiguracao/detalhes',		
-            salvaDataLicitacao: baseApi.url + 'aviso/emconfiguracao/salva'        
-        },        
+            getDetalhes: baseApi.url + 'aviso/emconfiguracao/detalhes',
+            salvaDataLicitacao: baseApi.url + 'aviso/emconfiguracao/salva'
+        },
         expirado: {
             recupera: baseApi.url + 'aviso/expirado/pesquisa',
             recuperaTotal: baseApi.url + 'aviso/expirado/total',
@@ -33,7 +34,7 @@ export const Url = {
         geral: {
             recupera: baseApi.url + 'aviso/geral/pesquisa',
             recuperaTotal: baseApi.url + 'aviso/geral/total',
-            getDetalhes: baseApi.url + 'aviso/geral/detalhes',		
+            getDetalhes: baseApi.url + 'aviso/geral/detalhes',
         },
         naopublicado: {
             recupera: baseApi.url + 'aviso/naopublicado/pesquisa',

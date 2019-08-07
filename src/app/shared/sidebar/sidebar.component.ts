@@ -15,10 +15,15 @@ export interface RouteInfo {
 }
 
 export const ROUTES: RouteInfo[] = [
+    { path: 'logsistema', idSubMenu: '', title: 'Login', icon: '', class: '', submenu: [] },
     { path: 'principal', idSubMenu: '', title: 'Principal', icon: 'ti-home', class: '', submenu: [] },
-    { path: 'comoparticipar', idSubMenu: '', title: 'Como Participar', icon: 'ti-thumb-up', class: '', submenu: [] },
-    { path: 'avisolicitacao', idSubMenu: '', title: 'Aviso de Licitações', icon: 'ti-bell', class: '', submenu: [] },
-    { path: 'expirados', idSubMenu: '', title: 'Expirados', icon: 'ti-na', class: '', submenu: [] }
+    { path: 'inserirnovoplano', idSubMenu: '', title: 'Inserir Novo Plano', icon: 'ti-folder', class: '', submenu: [] },
+    { path: 'planosdeseguranca', idSubMenu: '', title: 'Planos de Segurança', icon: 'ti-control-play', class: '', submenu: [] },
+    { path: 'auditorias', idSubMenu: '', title: 'Auditorias', icon: 'fas fa-university', class: '', submenu: [] },
+    { path: 'comunicacoesinternas', idSubMenu: '', title: 'Comunicações Internas', icon: 'fas fa-mobile-alt', class: '', submenu: [] },
+    { path: 'atas', idSubMenu: '', title: 'Atas', icon: 'fas fa-file', class: '', submenu: [] },
+    { path: 'items', idSubMenu: '', title: 'Items', icon: 'fas fa-cubes', class: '', submenu: [] },
+    { path: 'tipodeobra', idSubMenu: '', title: 'Tipo de Obra', icon: 'fas fa-wrench', class: '', submenu: [] },
 ];
 
 export const ROUTESLogado: RouteInfo[] = [

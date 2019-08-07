@@ -16,6 +16,5 @@ import { EsqueciSenhaModule } from '../../../app/modal/esquecisenha/esquecisenha
     entryComponents: [LoginComponent, TrocaSenhaComponent],
 })
 
-export class NavbarModule {     
-}
+export class NavbarModule {}
 

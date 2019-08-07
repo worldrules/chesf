@@ -28,6 +28,8 @@ import { GeraisComponent as GeralFornecedor } from './configuracoes/fornecedor/g
 import { LogSistemaComponent } from './logsistema/logsistema.component';
 import { ModeloParaEmailComponent } from './configuracoes/fornecedor/modeloparaemail/modeloparaemail.component';
 import { AuthGuard } from './_infra/_guards/auth.guard';
+import { InserirplanoComponent } from './inserirplano/inserirplano.component';
+
 
 export const AppRoutes: Routes = [
     {
@@ -38,6 +40,10 @@ export const AppRoutes: Routes = [
     {
         path: 'principal',
         component: PrincipalComponent
+    },
+    {
+      path: 'inserirnovoplano',
+      component: InserirplanoComponent
     },
     {
         path: 'avisolicitacao',
@@ -53,7 +59,7 @@ export const AppRoutes: Routes = [
     },
     {
         path: 'pesquisa',
-        component: PesquisaComponent        
+        component: PesquisaComponent
     },
     {
         path: 'aviso/emconfiguracao',
@@ -154,7 +160,7 @@ export const AppRoutes: Routes = [
         path: 'configuracoes/fornecedor/gerais',
         component: GeralFornecedor,
         canActivate: [AuthGuard]
-    },    
+    },
     {
         path: 'configuracoes/fornecedor/modeloparaemail',
         component: ModeloParaEmailComponent,
@@ -164,5 +170,5 @@ export const AppRoutes: Routes = [
         path: 'logsistema',
         component: LogSistemaComponent,
         canActivate: [AuthGuard]
-    }          
+    }
 ]

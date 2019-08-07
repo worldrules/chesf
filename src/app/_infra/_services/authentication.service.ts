@@ -1,18 +1,23 @@
+import { Usuario } from './../_model/usuario';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 import { Observable } from 'rxjs/internal/Observable';
 import { Subject } from 'rxjs';
-import { Usuario } from '../_model/usuario';
 import { Fornecedor } from '../_model/fornecedor';
 import { Url } from '../_common/url';
+import { Router } from '@angular/router'
 
 @Injectable()
 export class AuthenticationService {
+  public usuarioAutenticado: boolean = null;
+  //Usuario da primeira tela
+
+
   //CurrentUser login EMISSÃO EDITAL
   private currentUserSubject: BehaviorSubject<Usuario>;
   public currentUser: Observable<Usuario>;
-  
+
   //Current User login AD INTRANET
   public currentUserADSubject: BehaviorSubject<Usuario>;
   public currentUserAD: Observable<Usuario>;
@@ -20,8 +25,8 @@ export class AuthenticationService {
 
   public currentFornecedorSubject: BehaviorSubject<Fornecedor>;
   public currentFornecedor: Observable<Fornecedor>;
-  
-  constructor(private http: HttpClient) {    
+
+  constructor(private http: HttpClient) {
     this.currentUserSubject = new BehaviorSubject<Usuario>(
       JSON.parse(localStorage.getItem('currentUser'))
     );
@@ -32,7 +37,7 @@ export class AuthenticationService {
 
     this.currentUser = this.currentUserSubject.asObservable();
     this.currentFornecedor = this.currentFornecedorSubject.asObservable();
-    
+
     //This AD
     this.currentUserADSubject = new BehaviorSubject<Usuario>(
       JSON.parse(localStorage.getItem('currentUserAD'))
