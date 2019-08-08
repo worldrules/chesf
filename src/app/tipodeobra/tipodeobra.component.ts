@@ -12,17 +12,13 @@ export class TipodeobraComponent implements OnInit {
 
   tiposDeObra: string[] = ["1"];
 
-  onKeyUp(e: KeyboardEvent) {
-    this.nomeDaObra = (<HTMLInputElement>e.target).value;
-  }
+
 
   incluiObra() {
 
   }
 
-  mudaCat() {
-    this.catDaObra = (<HTMLInputElement>e.target).value;
-  }
+
 
   constructor() { }
 
