@@ -1,6 +1,31 @@
 #dataStyle {
-  margin-top: 65%;
-  color: gray;
+     color: gray;
+     font-weight: bold;
+     position: relative;
+     bottom: 8vw;
+}
+.fa-question-circle {
+  color: grey;
+  cursor: pointer;
   position: relative;
-  left: 130%;
+  bottom: 6vw;
+  right: 3vw;
+}
+
+.ti-lock {
+color: grey;
+cursor: pointer;
+}
+
+.logout {
+  position: relative;
+  top: -2vw;
+  left: -1vw;
+  color: grey;
+}
+
+#divLogout {
+  position: relative;
+  top: 1vw;
+  right: 7vw;
 }

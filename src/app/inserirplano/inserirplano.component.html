@@ -6,9 +6,10 @@
 </head>
 
 <body class="container-fluid">
-  <h4>Inserir Novo Plano<p style="color: red">RF . 6</p></h4>
+  <h4>Inserir Novo Plano<p style="color: red">RF . 6</p>
+  </h4>
 
-   <div class="row">
+  <div class="row">
     <div class="col-sm-3 ">
       <label for="solicitante">Nome do solicitante</label>
       <input type="text" class="form-control" id="solicitante" placeholder="Insira o nome do solicitante" readonly>
@@ -39,10 +40,10 @@
 
   <!--Divisor-->
   <div class="separador">
-      <span class="textoCentro">
-       Dados da Empresa
-     </span>
-   </div>
+    <span class="textoCentro">
+      Dados da Empresa
+    </span>
+  </div>
 
 
   <!--Segunda ROW-->
@@ -60,59 +61,60 @@
       <input type="text" class="form-control" id="foneramal2" placeholder="(51) 32658798">
     </div>
     <div class="col-sm-3">
-     <label for="email">Email</label>
-     <input type="text" class="form-control" id="email" placeholder="suporte@gmail.com.br">
-   </div>
+      <label for="email">Email</label>
+      <input type="text" class="form-control" id="email" placeholder="suporte@gmail.com.br">
+    </div>
 
   </div>
   <!--Divisor-->
   <div class="separador">
-      <span class="textoCentro">
-       Dados da Obra
-     </span>
-   </div>
+    <span class="textoCentro">
+      Dados da Obra
+    </span>
+  </div>
 
-<!--Row-->
+  <!--Row-->
 
-<!--Ajustar isso aqui-->
+  <!--Ajustar isso aqui-->
 
 
-<div class="row mb-3 mt-5">
- <!-- <label for="fiscal" class="p-2">Data Prevista Inicial</label>
+  <div class="row mb-3 mt-5">
+    <!-- <label for="fiscal" class="p-2">Data Prevista Inicial</label>
  <input type="date" class="form-control col-sm-2">
 
  <label for="fiscal" class="p-2">Data Prevista de Conclusão</label>
  <input type="date" class="form-control col-sm-2"> -->
 
 
- <div class="col-sm-4">
-   <label for="fiscal" class="p-2">Data Prevista Inicial</label>
-   <input type="date" name="" id="" class="form-control">
- </div>
+    <div class="col-sm-4">
+      <label for="fiscal" class="p-2">Data Prevista Inicial</label>
+      <input type="date" name="" id="" class="form-control">
+    </div>
 
- <div class="col-sm-4">
-     <label for="fiscal" class="p-2">Data Prevista de Conclusão</label>
-     <input type="date" name="" id="" class="form-control">
-   </div>
+    <div class="col-sm-4">
+      <label for="fiscal" class="p-2">Data Prevista de Conclusão</label>
+      <input type="date" name="" id="" class="form-control">
+    </div>
 
 
- <div class="col-sm-4 mt-3">
+    <div class="col-sm-4 mt-3">
       <label for="nmProcesso">Número do Processo</label>
       <input type="text" class="form-control" id="nmProcesso" placeholder="9848534685486879">
- </div>
-</div>
+    </div>
+  </div>
 
 
   <!--Terceira Row-->
   <div class="row  mb-3">
     <div class="col-sm-8">
       <label for="descObra">Descrição da Obra / Serviço</label>
-      <input type="text" class="form-control" id="descObra" placeholder="O projeto proposto para o Espaço de Instalações do Museu do Açude...">
+      <input type="text" class="form-control" id="descObra"
+        placeholder="O projeto proposto para o Espaço de Instalações do Museu do Açude...">
     </div>
     <div class="col-sm-4 mt-1">
       <label for="tipoObra">Tipo da Obra / Serviço</label>
       <!-- <input type="text" class="form-control" id="tipoObra" placeholder="forma de contratar a obra pode ser de dois tipos, por empreitada global, isto é fixa-se um preço total onde o contratado no prazo"> -->
-      <select name="" id="" class="form-control">
+      <select name="" id="" class="form-control border-input">
         <option value="">Opt 1 </option>
         <option value="">Opt 2 </option>
         <option value="">Opt 3 </option>
@@ -132,155 +134,149 @@
 
   <!--Divisor-->
   <div class="separador">
-     <span class="textoCentro">
-       Dados do Plano de Segurança
-     </span>
-   </div>
-
-  <!--Quarta Row-->
-
-  <!--AJustar o radio com jquery-->
-  <div class="row mt-5">
-    <div class="col-md-4">
-      <label for="exampleAccount">Situação do Plano</label>
-      <div class="form-group large">
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-            Aprovado
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="exig">
-            Em exigência
-          </label>
-        </div>
-        <div class="form-check form-check-inline ">
-          <label class="form-check-label">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
-            Cancelado
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option4">
-            Encerrado
-          </label>
-        </div>
-      </div>
-    </div>
-
-    <div id="divExig" name="divExig" style="display: none">
-        <label for="">Exigência</label>
-        <input type="text" class="form-control">
-    </div>
-    <div class="col-md-2">
-       <label for="exampleAccount">Tipo do Plano</label>
-       <div class="form-group large">
-         <div class="form-check form-check-inline">
-           <label class="form-check-label">
-             <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-             1
-           </label>
-         </div>
-         <div class="form-check form-check-inline">
-           <label class="form-check-label">
-             <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-             2
-           </label>
-         </div>
-         <div class="form-check form-check-inline">
-           <label class="form-check-label">
-             <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> 3
-           </label>
-         </div>
-       </div>
-     </div>
-
-   <div></div>
-     <label for="descObra" class="">Plano Auditado pela Regional</label>
-    <div class="form-check form-check-inline">
-       <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="opcao1">
-       <label class="form-check-label" for="inlineCheckbox1">Fortaleza</label>
-     </div>
-     <div class="form-check form-check-inline">
-       <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="opcao2">
-       <label class="form-check-label" for="inlineCheckbox2">Recife</label>
-     </div>
-     <div class="form-check form-check-inline">
-       <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="opcao3">
-       <label class="form-check-label" for="inlineCheckbox3">Sobradinho</label>
-     </div>
-     <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="opcao1">
-        <label class="form-check-label" for="inlineCheckbox1">Paulo Afonso</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="opcao2">
-        <label class="form-check-label" for="inlineCheckbox2">Salvador</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="opcao3">
-        <label class="form-check-label" for="inlineCheckbox3">Teresina</label>
-      </div>
-
+    <span class="textoCentro">
+      Dados do Plano de Segurança
+    </span>
   </div>
 
-  <!--Quinta ROW-->
-
+  <!--Row dos radios de aprovação-->
   <div class="row">
+    <div class="col-sm-6">
+      <label for="">Situação do Plano: </label>
+      <p>
+        <label>
+          <input name="group1"
+          (click)="semExigencia()"
+          type="radio" value="aprovado" />
+          <span>Aprovado</span>
+        </label>
+        <label>
+          <input name="group1"
+          (click)="mudaExigencia()"
+          type="radio" value="exigencia" />
+          <span>Em Exigência</span>
+        </label>
+        <label>
+          <input class="with-gap"
+          (click)="semExigencia()"
+          name="group1" type="radio" value="cancelado" />
+          <span>Cancelado</span>
+        </label>
+
+        <label>
+          <input class="with-gap"
+          (click)="semExigencia()"
+          name="group1" type="radio" value="encerrado" />
+          <span>Encerrado</span>
+        </label>
+      </p>
+    </div>
+
+    <div *ngIf="exigencia === true"  class="col-sm-6">
+      <label for="">Exigência</label>
+      <input type="text" class="form-control border-input">
+    </div>
+  </div>
+  <!--Final da row dos radios-->
+
+  <!--Row dos radios 1 2 e 3-->
+  <div class="row">
+    <div class="col-sm-6">
+      <label for="">Tipo do Plano: </label>
+      <p>
+        <label>
+          <input class="with-gap" name="group2" type="radio" />
+          <span>1</span>
+        </label>
+        <label>
+          <input class="with-gap" name="group2" type="radio" />
+          <span>2</span>
+        </label>
+        <label>
+          <input class="with-gap" name="group2" type="radio" />
+          <span>3</span>
+        </label>
+      </p>
+    </div>
+  </div>
+  <!--Final da row dos radios-->
+
+  <!--Inicio dos checkbox de estados-->
+  <label for="">Plano Auditado pela Regional:</label>
+  <div class="row">
+    <p>
+      <label class="checkboxAjuste">
+        <input type="checkbox" />
+        <span>Fortaleza</span>
+      </label>
+
+      <label class="checkboxAjuste">
+        <input type="checkbox" />
+        <span>Recife</span>
+      </label>
+
+      <label class="checkboxAjuste">
+        <input type="checkbox" />
+        <span>Sobradinho</span>
+      </label>
+
+      <label class="checkboxAjuste">
+        <input id="indeterminate-checkbox" type="checkbox" />
+        <span>Paulo Afonso</span>
+      </label>
+
+      <label class="checkboxAjuste">
+        <input type="checkbox" />
+        <span>Salvador</span>
+      </label>
+
+      <label class="checkboxAjuste">
+        <input type="checkbox" />
+        <span>Teresina</span>
+      </label>
+    </p>
 
   </div>
-
-  <!--Sexta Row-->
-
-
-
-
-  <!--Sétima Row-->
-
 
 
   <div class="row mb-4">
-  <div class="col-sm-12">
-     <label for="">Número da C.I.</label>
-     <input type="text" class="form-control">
-   </div>
- </div>
+    <div class="col-sm-12">
+      <label for="">Número da C.I.</label>
+      <input type="text" class="form-control">
+    </div>
+  </div>
 
 
-
-    <!-- <label for="admin" class="p-2">Administrador do contrato</label>
+  <!-- <label for="admin" class="p-2">Administrador do contrato</label>
     <input type="text" class="form-control col-sm-3" id="admin">
     <button class="pb-3 ajuste"><i class="icone fa fa-search "></i></button> -->
 
-    <div class="row mb-3">
-     <div class="col-sm-3">
-       <label for="admin">Administrador do Contrato</label>
-       <input type="text" class="form-control" id="admin" placeholder="Insira o nome do administrador do contrato">
-     </div>
-     <div class="col-sm-3">
-       <label for="login">Login</label>
-       <input type="text" class="form-control" id="login" placeholder="Insira o login">
-     </div>
-     <div class="col-sm-3">
-       <label for="orgao">Orgão</label>
-       <div class="input-group">
-         <div class="input-group-prepend"></div>
-         <input type="text" class="form-control" id="orgao" placeholder="Insira o orgão">
-       </div>
-     </div>
-     <div class="col-sm-3">
-       <label for="foneramal">Fone / Ramal</label>
-       <div class="input-group">
-         <div class="input-group-prepend"></div>
-         <input type="text" class="form-control" id="foneramal" placeholder="Insira o telefone">
-       </div>
-     </div>
-   </div>
+  <div class="row mb-3">
+    <div class="col-sm-3">
+      <label for="admin">Administrador do Contrato</label>
+      <input type="text" class="form-control" id="admin" placeholder="Insira o nome do administrador do contrato">
+    </div>
+    <div class="col-sm-3">
+      <label for="login">Login</label>
+      <input type="text" class="form-control" id="login" placeholder="Insira o login">
+    </div>
+    <div class="col-sm-3">
+      <label for="orgao">Orgão</label>
+      <div class="input-group">
+        <div class="input-group-prepend"></div>
+        <input type="text" class="form-control" id="orgao" placeholder="Insira o orgão">
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <label for="foneramal">Fone / Ramal</label>
+      <div class="input-group">
+        <div class="input-group-prepend"></div>
+        <input type="text" class="form-control" id="foneramal" placeholder="Insira o telefone">
+      </div>
+    </div>
+  </div>
 
-     <!--Divisor-->
+  <!--Divisor-->
   <!-- <nav aria-label="breadcrumb">
    <ol class="breadcrumb form-control">
      <li class="breadcrumb-item active " aria-current="page">Responsável pelo contrato / análise do plano</li>
@@ -322,6 +318,7 @@
      </div>
    </div>
  </div> -->
- <button class="btn btn-primary" id="salvar">Salvar</button>
+  <button class="btn btn-primary" id="salvar">Salvar</button>
 
-</body> <!--End Sétima Row-->
+</body>
+<!--End Sétima Row-->

@@ -7,6 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InserirplanoComponent implements OnInit {
 
+  exigencia = false;
+
+  mudaExigencia() {
+    this.exigencia = !this.exigencia;
+  // tslint:disable-next-line: align
+  }
+  semExigencia() {
+    this.exigencia = false;
+  }
   constructor() { }
 
   ngOnInit() {

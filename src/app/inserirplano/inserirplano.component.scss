@@ -22,6 +22,7 @@ footer{
   background:transparent;
   outline:none;
   cursor: pointer;
+
 }
 
 .submit-line {
@@ -59,4 +60,18 @@ footer{
   font-size: 20px;
   background-color: white;
   padding: 0 10px;
+}
+
+.fa-search {
+  position: absolute;
+  bottom: -4vw;
+  right: 1vw;
+}
+
+.radioAjuste {
+  margin-left: 2px;
+}
+
+.checkboxAjuste {
+  margin-left: 1vw;
 }

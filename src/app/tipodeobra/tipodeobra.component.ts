@@ -10,7 +10,7 @@ export class TipodeobraComponent implements OnInit {
   nomeDaObra: string = '';
   catDaObra: string = '';
 
-  tiposDeObra: string[] = ["1"];
+  tiposDeObra: string[] = ['1'];
 
 
 

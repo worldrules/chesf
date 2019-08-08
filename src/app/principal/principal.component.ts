@@ -7,14 +7,15 @@ declare var $: any;
 @Component({
   selector: 'app-principal',
   moduleId: module.id,
-  templateUrl: 'principal.component.html'
+  templateUrl: 'principal.component.html',
+  styleUrls: ['./principal.component.scss']
 })
 
 export class PrincipalComponent implements OnInit {
   principal: any;
   principalDescricao: any;
   jumboTitulo: string = "Sistema de Auditoria de Segurança do Trabalho (SAUST)";
-  
+
   verMais: string =`É um instrumento gerencial que tem como objetivo identificar parâmetros
   não-conformes que reduzem o desempenho da qualidade de produtos, operações, logística ou
   aumentam os riscos de acidentes ou doenças profissionais no ambiente de trabalho. Nesse
