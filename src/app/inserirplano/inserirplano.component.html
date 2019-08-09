@@ -6,8 +6,7 @@
 </head>
 
 <body class="container-fluid">
-  <h4>Inserir Novo Plano<p style="color: red">RF . 6</p>
-  </h4>
+  <h4>Inserir Novo Plano</h4>
 
   <div class="row">
     <div class="col-sm-3 ">
@@ -146,12 +145,14 @@
       <p>
         <label>
           <input name="group1"
+          class="with-gap"
           (click)="semExigencia()"
           type="radio" value="aprovado" />
           <span>Aprovado</span>
         </label>
         <label>
           <input name="group1"
+          class="with-gap"
           (click)="mudaExigencia()"
           type="radio" value="exigencia" />
           <span>Em Exigência</span>
@@ -318,7 +319,7 @@
      </div>
    </div>
  </div> -->
-  <button class="btn btn-primary" id="salvar">Salvar</button>
+  <button class="btn btn-success btn-fill btn-wd" id="salvar">Salvar</button>
 
 </body>
 <!--End Sétima Row-->

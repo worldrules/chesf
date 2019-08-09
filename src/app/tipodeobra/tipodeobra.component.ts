@@ -15,7 +15,7 @@ export class TipodeobraComponent implements OnInit {
   obraSelecionada: Obra = new Obra();
 
   addOrEdit() {
-    if (this.obraSelecionada.id == 0) {
+    if (this.obraSelecionada.id === 0) {
       this.obraSelecionada.id = this.obraArray.length + 1;
       this.obraArray.push(this.obraSelecionada);
     }
