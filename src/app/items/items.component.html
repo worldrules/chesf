@@ -27,13 +27,17 @@
       </label>
     </div>
 
-    <button (click)="addOrEdit()" class="btn btn-primary" id="incluir" name="incluir">Incluir
+    <button
+    *ngIf="selectedName.id !== 0"
+    (click)="novoItem()" class="btn btn-success btn-fill btn-wd" id="novo" name="novo">Novo Item
+    </button>
+    <button (click)="addOrEdit()" class="btn btn-success btn-fill btn-wd" id="incluir" name="incluir">Incluir
     </button>
 
     <button
     *ngIf="selectedName.id !== 0"
     (click)="excluir()"
-    class="btn btn-danger">Excluir</button>
+    class="btn btn-danger btn-fill btn-wd">Excluir</button>
 
   </div>
 
@@ -48,7 +52,7 @@
       <ul class="list-group">
         <li (click)="editar(item)" [class.active]="item == selectedName" *ngFor="let item of itemArray"
           class="list-group-item">
-          {{ item.name }}-{{ item.categoria }}
+          {{ item.name }}  -  {{ item.categoria }}
         </li>
       </ul>
     </div>

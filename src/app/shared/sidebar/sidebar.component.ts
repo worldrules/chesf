@@ -24,7 +24,7 @@ export const ROUTES: RouteInfo[] = [
     { path: 'inserirnovoplano', idSubMenu: '', title: 'Inserir Novo Plano', icon: 'ti-folder', class: '', submenu: [] },
     { path: 'planosdeseguranca', idSubMenu: '', title: 'Planos de Segurança', icon: 'ti-control-play', class: '', submenu: [] },
     { path: 'auditorias', idSubMenu: '', title: 'Auditorias', icon: 'fas fa-university', class: '', submenu: [] },
-    { path: 'items', idSubMenu: '', title: 'Items', icon: 'fas fa-cubes', class: '', submenu: [] },
+    { path: 'items', idSubMenu: '', title: 'Itens', icon: 'fas fa-cubes', class: '', submenu: [] },
     { path: 'tipodeobra', idSubMenu: '', title: 'Tipo de Obra', icon: 'fas fa-wrench', class: '', submenu: [] },
 ];
 

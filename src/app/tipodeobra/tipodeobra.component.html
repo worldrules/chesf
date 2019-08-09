@@ -1,45 +1,51 @@
 <body class="container-fluid">
-    <h4>Tipo de Obra<p style="color: red">RF . 12</p>
-    </h4>
+  <h4>Tipo de Obra<p style="color: red">RF . 12</p>
+  </h4>
 
 
-    <div class="row">
-      <div class='col-sm-3'>
-        <label>Descrição da obra
-          <div>
-            <input
-             (keyup)="onKeyUp($event)"
-             type="text" class="form-control" id="descricao">
-          </div>
-        </label>
-      </div>
-
-      <div class="col-sm-3">
-        <label>Categoria
-          <div>
-            <select
-            name="" id="" class="form-control">
-              <option value="option 1">Opção 1</option>
-              <option value="option 2">Opção 2</option>
-              <option value="option 3">Opção 3</option>
-              <option value="option 4">Opção 4</option>
-              <option value="option 5">Opção 5</option>
-            </select>
-          </div>
-        </label>
-      </div>
+  <div class="row">
+    <div class='col-sm-3'>
+      <label>Descrição da obra
+        <div>
+          <input type="text" [(ngModel)]="obraSelecionada.descricao" class="form-control" id="descricao">
+        </div>
+      </label>
     </div>
 
-    <div class="row">
-        <button
-        (click)="incluiObra()"
-        class="btn btn-primary">Incluir</button>
-        <button class="btn btn-primary">Alterar</button>
-        <button class="btn btn-danger">Excluir</button>
+    <div class="col-sm-3">
+      <label>Categoria
+        <div>
+          <select name="" id="" class="form-control">
+            <option value="option 1">Energia Improvisada</option>
+            <option value="option 2">Ligação de Esgoto</option>
+            <option value="option 3">Pedreiro</option>
+            <option value="option 4">Preparação de Elétrica</option>
+            <option value="option 5">Terraplanagem e Escavações</option>
+          </select>
+        </div>
+      </label>
     </div>
+    <button (click)="addOrEdit()" class="btn btn-success btn-fill btn-wd">Incluir</button>
+    <button class="btn btn-success btn-fill btn-wd">Alterar</button>
+    <button
+    *ngIf="obraSelecionada.id !== 0"
+    (click)="excluir()"
+    class="btn btn-danger btn-fill btn-wd">Excluir</button>
+  </div>
 
-      <!--Row-->
-      <div class="row">
+
+  <div class="row">
+    <div class="col-sm-8">
+      <ul class="list-group">
+        <li (click)="editar(obra)" [class.active]="obra == obraSelecionada" *ngFor="let obra of obraArray"
+          class="list-group-item">
+          {{ obra.descricao }}
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!--Row-->
+  <!-- <div class="row">
           <div class="table-responsive">
             <table class="table table-bordered">
               <thead>
@@ -59,8 +65,8 @@
               </tbody>
             </table>
           </div>
-        </div>
-        <!--Fim da Row-->
+        </div> -->
+  <!--Fim da Row-->
 
 
-  </body>
+</body>

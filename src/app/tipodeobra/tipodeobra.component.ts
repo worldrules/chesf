@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Obra } from '../_infra/_model/obra';
 
 @Component({
   selector: 'app-tipodeobra',
@@ -7,16 +8,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TipodeobraComponent implements OnInit {
 
-  nomeDaObra: string = '';
-  catDaObra: string = '';
+  obraArray: Obra[] = [
+    {id: 1, descricao: 'Caixaria'},
+  ];
 
-  tiposDeObra: string[] = ['1'];
+  obraSelecionada: Obra = new Obra();
 
-
-
-  incluiObra() {
-
+  addOrEdit() {
+    if (this.obraSelecionada.id == 0) {
+      this.obraSelecionada.id = this.obraArray.length + 1;
+      this.obraArray.push(this.obraSelecionada);
+    }
+    this.obraSelecionada = new Obra();
   }
+
+  editar(item: Obra) {
+    this.obraSelecionada = item;
+  }
+
+  excluir() {
+   if (confirm('Tem certeza que deseja excluir o item ?')) {
+    this.obraArray = this.obraArray.filter(item => item !== this.obraSelecionada);
+    this.obraSelecionada = new Obra();
+   }
+  }
+  novoItem() {
+    this.obraSelecionada = new Obra();
+   }
 
 
 

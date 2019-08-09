@@ -9,7 +9,7 @@ import { Item } from '../_infra/_model/item';
 export class ItemsComponent implements OnInit {
 
   itemArray: Item[] = [
-    {id: 1, name: 'Teste', categoria: 'Categoria para Teste'},
+    {id: 1, name: 'Caixaria', categoria: 'Alvenaria e Estrutura'},
   ];
 
   selectedName: Item = new Item();
@@ -32,6 +32,9 @@ export class ItemsComponent implements OnInit {
     this.selectedName = new Item();
    }
   }
+  novoItem() {
+    this.selectedName = new Item();
+   }
 
 
   constructor() { }
