@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+
 declare var $:any;
 
 @Component({
@@ -8,4 +9,6 @@ declare var $:any;
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent{}
+export class AppComponent {
+
+}

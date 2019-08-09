@@ -5,9 +5,9 @@
 
   <div class="row">
     <div class='col-sm-3'>
-      <label>Descrição dos itens
+      <label>Nome do Item
         <div>
-          <input type="text" class="form-control" id="descricao">
+          <input type="text" [(ngModel)]="selectedName.name" class="form-control" id="descricao" name="descricao">
         </div>
       </label>
     </div>
@@ -15,28 +15,48 @@
     <div class="col-sm-3">
       <label>Categoria
         <div>
-          <select name="" id="" class="form-control">
-            <option value="">Opção 1</option>
-            <option value="">Opção 2</option>
-            <option value="">Opção 3</option>
-            <option value="">Opção 4</option>
-            <option value="">Opção 5</option>
+          <select name="categoria" [(ngModel)]="selectedName.categoria" id="categoria"
+            class="form-control border-input" placeholder="Selecione...">
+            <option value="1">Opção 1</option>
+            <option value="2">Opção 2</option>
+            <option value="3">Opção 3</option>
+            <option value="4">Opção 4</option>
+            <option value="5">Opção 5</option>
           </select>
         </div>
       </label>
-
     </div>
-    <button class="btn btn-primary">Incluir</button>
+
+    <button (click)="addOrEdit()" class="btn btn-primary" id="incluir" name="incluir">Incluir
+    </button>
+
+    <button
+    *ngIf="selectedName.id !== 0"
+    (click)="excluir()"
+    class="btn btn-danger">Excluir</button>
+
   </div>
 
 
 
-      <!-- <button class="btn btn-primary">Alterar</button>
+  <!-- <button class="btn btn-primary">Alterar</button>
       <button class="btn btn-danger">Excluir</button> -->
 
 
-    <!--Row-->
-    <div class="row">
+  <div class="row">
+    <div class="col-sm-8">
+      <ul class="list-group">
+        <li (click)="editar(item)" [class.active]="item == selectedName" *ngFor="let item of itemArray"
+          class="list-group-item">
+          {{ item.name }}-{{ item.categoria }}
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+  <!--Row-->
+  <!-- <div class="row">
         <div class="table-responsive">
           <table class="table table-bordered">
             <thead>
@@ -45,31 +65,16 @@
                 <th>Categoria</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td>1</td>
-                <td>Arruamentos urbanos com dupla faixa de rodagem; </td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>Sistemas elevatórios de águas residuais; </td>
-
-              </tr>
-              <tr>
-                <td>1</td>
-                <td> Instalações, equipamentos e sistemas de águas e esgotos em edifícios; </td>
-
-              </tr>
+            <tbody id="tbodyPri" name="tbodyPri">
               <tr>
                 <td>1</td>
                 <td>Sifões invertidos para águas residuais;</td>
               </tr>
-
-            </tbody>
+          </tbody>
           </table>
         </div>
-      </div>
-      <!--Fim da Row-->
+      </div> -->
+  <!--Fim da Row-->
 
 
 </body>
