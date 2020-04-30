@@ -34,7 +34,7 @@
     "datepicker-bootstrap": "^1.9.13",
     "document-register-element": "^1.7.2",
     "express": "^4.17.1",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "lodash": "^4.17.15",
     "materialize-css": "^1.0.0-rc.2",
     "moment": "^2.24.0",
