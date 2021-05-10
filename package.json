@@ -35,7 +35,7 @@
     "document-register-element": "^1.7.2",
     "express": "^4.17.1",
     "jquery": "^3.4.1",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "materialize-css": "^1.0.0-rc.2",
     "moment": "^2.24.0",
     "ng-select2-component": "^7.0.0",
