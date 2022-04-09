@@ -37,7 +37,7 @@
     "jquery": "^3.4.1",
     "lodash": "^4.17.15",
     "materialize-css": "^1.0.0-rc.2",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "ng-select2-component": "^7.0.0",
     "ngx-mask": "^7.9.10",
     "popper.js": "^1.15.0",
