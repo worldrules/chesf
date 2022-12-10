@@ -33,7 +33,7 @@
     "core-js": "^2.5.4",
     "datepicker-bootstrap": "^1.9.13",
     "document-register-element": "^1.7.2",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "jquery": "^3.4.1",
     "lodash": "^4.17.15",
     "materialize-css": "^1.0.0-rc.2",
